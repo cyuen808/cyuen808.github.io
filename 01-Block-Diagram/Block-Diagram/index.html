@@ -511,9 +511,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-block-diagram" class="md-nav__link">
+  <a href="#block-diagram" class="md-nav__link">
     <span class="md-ellipsis">
-      Example Block Diagram
+      Block Diagram
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pin-assignment-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pin Assignment Table
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Future Work
     </span>
   </a>
   
@@ -809,9 +836,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-block-diagram" class="md-nav__link">
+  <a href="#block-diagram" class="md-nav__link">
     <span class="md-ellipsis">
-      Example Block Diagram
+      Block Diagram
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pin-assignment-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pin Assignment Table
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Future Work
     </span>
   </a>
   
@@ -842,19 +896,87 @@
 
   <h1>Individal Block Diagram</h1>
 
+<p><strong>Team 204 – Clap-Activated Smart Light</strong><br>
+<strong>Caleb Yuen – Master Controller (Hub)</strong>  </p>
 <h2 id="overview">Overview</h2>
-<p>This needs to be updated with a brief purpose for having the block diagram.
-Things to mention are:
-* power levels
-* sensor
-* Actuator
-* team connections
-* Power source
-* ...</p>
-<p>To get some initial formatting help, one can view <a href="https://embedded-systems-design.github.io/EGR304DataSheetTemplate/Appendix/basic-markdown-examples/">"here"</a> some basic techniques.</p>
-<h2 id="example-block-diagram">Example Block Diagram</h2>
-<p>Showing an example of how to import a screenshot of the block diagram created outside of git and brought into a page.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../individual-block-diagram.png" data-desc-position="bottom"><img alt="Example of Indivial Block diagram " src="../individual-block-diagram.png"></a></p>
+<p>This page describes the hardware layout of my subsystem (Hub) for the team clap-light project.<br>
+It shows how my PIC18F57Q43 Curiosity Nano connects to the Audio, Driver, and UI boards using the 8-pin ribbon-cable standard.</p>
+<h2 id="block-diagram">Block Diagram</h2>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../MasterController.png" data-desc-position="bottom"><img alt="Caleb Yuen: Master Controller (Hub) " src="../MasterController.png"></a>
+<em>Figure 1: Subsystem block diagram for Master Controller.</em></p>
+<h2 id="description">Description</h2>
+<ul>
+<li><strong>Microcontroller:</strong> Microchip PIC18F57Q43 Curiosity Nano  </li>
+<li><strong>Inputs:</strong> Clap signal (from Audio board), Button input (from UI board)  </li>
+<li><strong>Outputs:</strong> Lamp toggle (to Driver board), Status LED (to UI board)  </li>
+<li><strong>Communication:</strong> UART (TX/RX pins 1–2 on ribbon cable)  </li>
+<li><strong>Power:</strong> +5 V VBUS from USB; distributed to other boards  </li>
+</ul>
+<h2 id="pin-assignment-table">Pin Assignment Table</h2>
+<table>
+<thead>
+<tr>
+<th>Connector</th>
+<th>Pin</th>
+<th>Signal</th>
+<th>Direction</th>
+<th>MCU Pin</th>
+<th>Voltage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UI Board</td>
+<td>1</td>
+<td>TX</td>
+<td>Hub → UI</td>
+<td>RA1</td>
+<td>5 V</td>
+</tr>
+<tr>
+<td></td>
+<td>2</td>
+<td>RX</td>
+<td>UI → Hub</td>
+<td>RB2</td>
+<td>5 V</td>
+</tr>
+<tr>
+<td></td>
+<td>3</td>
+<td>Button Input</td>
+<td>UI → Hub</td>
+<td>RA1</td>
+<td>5 V</td>
+</tr>
+<tr>
+<td></td>
+<td>5</td>
+<td>Status LED</td>
+<td>Hub → UI</td>
+<td>RC4</td>
+<td>5 V</td>
+</tr>
+<tr>
+<td>Audio Board</td>
+<td>3</td>
+<td>Clap Signal</td>
+<td>Audio → Hub</td>
+<td>RD0</td>
+<td>5 V</td>
+</tr>
+<tr>
+<td>Driver Board</td>
+<td>3</td>
+<td>Lamp Toggle</td>
+<td>Hub → Driver</td>
+<td>RD2</td>
+<td>5 V</td>
+</tr>
+</tbody>
+</table>
+<h2 id="future-work">Future Work</h2>
+<p>Next step: convert this block diagram into a detailed hardware schematic for my PCB.</p>
 
 
 
