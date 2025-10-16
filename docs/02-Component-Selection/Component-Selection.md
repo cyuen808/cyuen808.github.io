@@ -1,11 +1,11 @@
 ---
-title: Component Selection Example
+title: Component Selection
 ---
 
 ## H-Bridge Motor Driver Options
 1. TB6612FNG
 
-    ![](image.png)
+    ![](Screenshot 2025-10-16 162904.png)
 
     * $1.82/each
     * [link to product](https://www.digikey.com/en/products/detail/toshiba-semiconductor-and-storage/TB6612FNG-C-8-EL/1730070)
@@ -16,6 +16,18 @@ title: Component Selection Example
     | Low ON Resistance & Integrated Protections – 0.5 Ω output path plus built-in thermal shutdown and undervoltage lockout ensure safe, efficient motor control.                      | Surface-Mount Package (SSOP-24) – Requires fine-pitch soldering or breakout board for breadboard use.                                      |
     | Compact & Reliable – Dual-channel design in one chip (CW/CCW/brake/standby), enabling bidirectional control of two DC motors or paralleled outputs for more current. | Peak Current is Short-Term Only – 3.2 A peaks allowed for milliseconds; not continuous—must stay under 1.2 A avg per channel for safe operation.
 
+1. DRV8833
+
+    ![](Screenshot 2025-10-16 162619.png)
+
+    * $2.62/each
+    * [link to product](https://www.digikey.com/en/products/detail/texas-instruments/DRV8833PW/4251165)
+
+    | Pros                                      | Cons                                                             |
+    | ----------------------------------------- | ---------------------------------------------------------------- |
+    | 3.3 V logic friendly with nSLEEP/IN pins (VIH specs and internal pulldowns provided). | Thermal/current derating: continuous current limited by PCB thermal design; device will TSD if power dissipation is high—needs copper area/PowerPAD for heat. |
+    | Good current + protections: up to 1.5 A RMS per bridge (pkg-dependent), 2 A peak; bridges can be paralleled; built-in OCP, TSD, UVLO, nFAULT, and sleep mode. | SMD only (TSSOP/HTSSOP/QFN): not breadboard-friendly; follow layout + PowerPAD guidelines.|
+    | VM 2.7–10.8 V, perfect for a ≤9 V project. | External passives required: must place 10 µF at VM, 2.2 µF at VINT, 0.01 µF VCP, and (if using current limit) sense resistors—adds a bit of BOM/PCB complexity.
 
 > This is the example found in the assignment, uses more html
 
