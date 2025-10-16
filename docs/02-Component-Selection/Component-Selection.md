@@ -2,9 +2,20 @@
 title: Component Selection Example
 ---
 
-## Examples
+## H-Bridge Motor Driver Options
+1. TB6612FNG
 
-### Style 1
+    ![](image.png)
+
+    * $1.82/each
+    * [link to product](https://www.digikey.com/en/products/detail/toshiba-semiconductor-and-storage/TB6612FNG-C-8-EL/1730070)
+
+    | Pros                                      | Cons                                                             |
+    | ----------------------------------------- | ---------------------------------------------------------------- |
+    | 3.3 V Logic Compatibility – Fully compatible with your Hub’s PIC18F57Q43 GPIO; no level shifting needed.| Limited Continuous Current (≈ 1.2 A) – Suitable for small/medium DC motors; sustained higher loads cause thermal rise or shutdown. |
+    | Low ON Resistance & Integrated Protections – 0.5 Ω output path plus built-in thermal shutdown and undervoltage lockout ensure safe, efficient motor control.                      | Surface-Mount Package (SSOP-24) – Requires fine-pitch soldering or breakout board for breadboard use.                                      |
+    | Compact & Reliable – Dual-channel design in one chip (CW/CCW/brake/standby), enabling bidirectional control of two DC motors or paralleled outputs for more current. | Peak Current is Short-Term Only – 3.2 A peaks allowed for milliseconds; not continuous—must stay under 1.2 A avg per channel for safe operation.
+
 
 > This is the example found in the assignment, uses more html
 
