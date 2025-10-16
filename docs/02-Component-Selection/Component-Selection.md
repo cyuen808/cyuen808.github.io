@@ -2,7 +2,7 @@
 title: Component Selection
 ---
 
-## H-Bridge Motor Driver Options
+## **H-Bridge Motor Driver Options**
 1. TB6612FNG
 
     ![](Screenshot 2025-10-16 162904.png)
@@ -12,11 +12,11 @@ title: Component Selection
 
     | Pros                                      | Cons                                                             |
     | ----------------------------------------- | ---------------------------------------------------------------- |
-    | 3.3 V Logic Compatibility – Fully compatible with your Hub’s PIC18F57Q43 GPIO; no level shifting needed.| Limited Continuous Current (≈ 1.2 A) – Suitable for small/medium DC motors; sustained higher loads cause thermal rise or shutdown. |
-    | Low ON Resistance & Integrated Protections – 0.5 Ω output path plus built-in thermal shutdown and undervoltage lockout ensure safe, efficient motor control.                      | Surface-Mount Package (SSOP-24) – Requires fine-pitch soldering or breakout board for breadboard use.                                      |
-    | Compact & Reliable – Dual-channel design in one chip (CW/CCW/brake/standby), enabling bidirectional control of two DC motors or paralleled outputs for more current. | Peak Current is Short-Term Only – 3.2 A peaks allowed for milliseconds; not continuous—must stay under 1.2 A avg per channel for safe operation.
+    | Works with 3.3 V logic, so it connects directly to the Hub without extra parts. | Can only handle about 1 amp continuously, so it’s not good for larger motors. |
+    | Has built-in protection to prevent overheating or short circuits. | The small surface-mount chip is tricky to solder without a breakout board. |
+    | Allows you to control two motors or use both sides together for more power. | The 3-amp peak rating only lasts a short time before the chip shuts down.
 
-1. DRV8833
+2. DRV8833
 
     ![](Screenshot 2025-10-16 162619.png)
 
@@ -25,9 +25,30 @@ title: Component Selection
 
     | Pros                                      | Cons                                                             |
     | ----------------------------------------- | ---------------------------------------------------------------- |
-    | 3.3 V logic friendly with nSLEEP/IN pins (VIH specs and internal pulldowns provided). | Thermal/current derating: continuous current limited by PCB thermal design; device will TSD if power dissipation is high—needs copper area/PowerPAD for heat. |
-    | Good current + protections: up to 1.5 A RMS per bridge (pkg-dependent), 2 A peak; bridges can be paralleled; built-in OCP, TSD, UVLO, nFAULT, and sleep mode. | SMD only (TSSOP/HTSSOP/QFN): not breadboard-friendly; follow layout + PowerPAD guidelines.|
-    | VM 2.7–10.8 V, perfect for a ≤9 V project. | External passives required: must place 10 µF at VM, 2.2 µF at VINT, 0.01 µF VCP, and (if using current limit) sense resistors—adds a bit of BOM/PCB complexity.
+    | Works with 3.3 V control signals, making it compatible with the Hub. | Can get hot under heavy loads and needs good heat spreading on the PCB. |
+    | Handles two motors and includes built-in protection for over-current, over-temperature, and undervoltage. | Only comes in surface-mount packages, so it’s not easy to use on a breadboard.|
+    | Runs on 2.7–10.8 V, which fits perfectly in the project’s ≤9 V limit. | Needs a few extra small capacitors for stable operation, adding some circuit complexity.
+
+3. 2156-FAN8100N-FS-ND
+
+    ![](Screenshot 2025-10-16 162800.png)
+
+    * On-Hand
+    * [link to product](https://www.digikey.com/en/products/detail/fairchild-semiconductor/FAN8100N/11558200)
+
+    | Pros                                      | Cons                                                             |
+    | ----------------------------------------- | ---------------------------------------------------------------- |
+    | Works perfectly with your project’s 6–9 V motor supply and 3.3 V logic from the Hub. | Can only handle about 1.5 A per channel, which limits use to smaller motors. |
+    | Has built-in protection features like thermal shutdown and short-circuit safety. | Older chip, no longer in production—can be harder to find replacements or breakout boards. |
+    | Includes built-in diodes that protect against voltage spikes when motors switch direction.t | Has a basic control setup (Forward, Reverse, Brake); requires extra PWM programming for smooth speed control.
+
+
+**Choice:** Option 1: Toshiba TB6612FNG
+
+**Rationale:** TB6612FNG is the most practical, low-risk driver for a 6–9 V system controlled by a 3.3 V MCU. It gives you reliable bidirectional control, braking, and PWM speed control with simple wiring and strong community support.
+
+
+
 
 > This is the example found in the assignment, uses more html
 
@@ -61,7 +82,7 @@ title: Component Selection
     | ----------------------------------------- | ---------------------------------------------------------------- |
     | Inexpensive                               | Requires external components and support circuitry for interface |
     | Compatible with PSoC                      | Needs special PCB layout.                                        |
-    | Meets surface mount constraint of project |
+    | Meets surface mount constraint of project |....
 
 1. CTX936TR-ND surface mount oscillator
 
