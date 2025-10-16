@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#examples" class="md-skip">
+        <a href="#h-bridge-motor-driver-options" class="md-skip">
           Skip to content
         </a>
       
@@ -548,23 +548,14 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
+  <a href="#h-bridge-motor-driver-options" class="md-nav__link">
     <span class="md-ellipsis">
-      Examples
+      H-Bridge Motor Driver Options
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Examples">
+    <nav class="md-nav" aria-label="H-Bridge Motor Driver Options">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#style-1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Style 1
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#style-2" class="md-nav__link">
@@ -815,23 +806,14 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
+  <a href="#h-bridge-motor-driver-options" class="md-nav__link">
     <span class="md-ellipsis">
-      Examples
+      H-Bridge Motor Driver Options
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Examples">
+    <nav class="md-nav" aria-label="H-Bridge Motor Driver Options">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#style-1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Style 1
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#style-2" class="md-nav__link">
@@ -872,8 +854,39 @@
 
   <h1>Component Selection Example</h1>
 
-<h2 id="examples">Examples</h2>
-<h3 id="style-1">Style 1</h3>
+<h2 id="h-bridge-motor-driver-options">H-Bridge Motor Driver Options</h2>
+<ol>
+<li>
+<p>TB6612FNG</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../image.png" data-desc-position="bottom"><img alt="" src="../image.png"></a></p>
+<ul>
+<li>$1.82/each</li>
+<li><a href="https://www.digikey.com/en/products/detail/toshiba-semiconductor-and-storage/TB6612FNG-C-8-EL/1730070">link to product</a></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.3 V Logic Compatibility – Fully compatible with your Hub’s PIC18F57Q43 GPIO; no level shifting needed.</td>
+<td>Limited Continuous Current (≈ 1.2 A) – Suitable for small/medium DC motors; sustained higher loads cause thermal rise or shutdown.</td>
+</tr>
+<tr>
+<td>Low ON Resistance &amp; Integrated Protections – 0.5 Ω output path plus built-in thermal shutdown and undervoltage lockout ensure safe, efficient motor control.</td>
+<td>Surface-Mount Package (SSOP-24) – Requires fine-pitch soldering or breakout board for breadboard use.</td>
+</tr>
+<tr>
+<td>Compact &amp; Reliable – Dual-channel design in one chip (CW/CCW/brake/standby), enabling bidirectional control of two DC motors or paralleled outputs for more current.</td>
+<td>Peak Current is Short-Term Only – 3.2 A peaks allowed for milliseconds; not continuous—must stay under 1.2 A avg per channel for safe operation.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
 <blockquote>
 <p>This is the example found in the assignment, uses more html</p>
 </blockquote>
@@ -889,12 +902,12 @@
 </thead>
 <tbody>
 <tr>
-<td><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../image1.png" data-desc-position="bottom"><img alt="" src="../image1.png"></a><br>Option 1.<br> XC1259TR-ND surface mount crystal<br>$1/each<br><a href="http://www.digikey.com/product-detail/en/ECS-40.3-S-5PX-TR/XC1259TR-ND/827366">link to product</a></td>
+<td><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="image1.png" data-desc-position="bottom"><img alt="" src="image1.png"></a><br>Option 1.<br> XC1259TR-ND surface mount crystal<br>$1/each<br><a href="http://www.digikey.com/product-detail/en/ECS-40.3-S-5PX-TR/XC1259TR-ND/827366">link to product</a></td>
 <td>* Inexpensive[^1]<br>* Compatible with PSoC<br>* Meets surface mount constraint of project</td>
 <td>* Requires external components and support circuitry for interface<br>* Needs special PCB layout.</td>
 </tr>
 <tr>
-<td><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../image3.png" data-desc-position="bottom"><img alt="" src="../image3.png"></a><br>* Option 2. <br>* CTX936TR-ND surface mount oscillator <br>* $1/each <br>* <a href="http://www.digikey.com/product-detail/en/636L3I001M84320/CTX936TR-ND/2292940">Link to product</a></td>
+<td><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="image3.png" data-desc-position="bottom"><img alt="" src="image3.png"></a><br>* Option 2. <br>* CTX936TR-ND surface mount oscillator <br>* $1/each <br>* <a href="http://www.digikey.com/product-detail/en/636L3I001M84320/CTX936TR-ND/2292940">Link to product</a></td>
 <td>* Outputs a square wave <br>* Stable over operating temperature <br> * Direct interface with PSoC (no external circuitry required) range</td>
 <td>* More expensive <br>* Slow shipping speed</td>
 </tr>
@@ -910,7 +923,7 @@
 <ol>
 <li>
 <p>XC1259TR-ND surface mount crystal</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../image1.png" data-desc-position="bottom"><img alt="" src="../image1.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="image1.png" data-desc-position="bottom"><img alt="" src="image1.png"></a></p>
 <ul>
 <li>$1/each</li>
 <li><a href="http://www.digikey.com/product-detail/en/ECS-40.3-S-5PX-TR/XC1259TR-ND/827366">link to product</a></li>
@@ -940,7 +953,7 @@
 </li>
 <li>
 <p>CTX936TR-ND surface mount oscillator</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../image3.png" data-desc-position="bottom"><img alt="" src="../image3.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="image3.png" data-desc-position="bottom"><img alt="" src="image3.png"></a></p>
 <ul>
 <li>$1/each</li>
 <li><a href="http://www.digikey.com/product-detail/en/636L3I001M84320/CTX936TR-ND/2292940">Link to product</a></li>
