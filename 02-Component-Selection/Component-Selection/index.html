@@ -26,7 +26,7 @@
 
     
       
-        <title>Component Selection Example - EGR 304 Data Sheet Template</title>
+        <title>Component Selection - EGR 304 Data Sheet Template</title>
       
     
     
@@ -125,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Component Selection Example
+              Component Selection
             
           </span>
         </div>
@@ -517,7 +517,7 @@
           
   
   <span class="md-ellipsis">
-    Component Selection Example
+    Component Selection
   </span>
   
 
@@ -528,7 +528,7 @@
         
   
   <span class="md-ellipsis">
-    Component Selection Example
+    Component Selection
   </span>
   
 
@@ -852,13 +852,13 @@
   
 
 
-  <h1>Component Selection Example</h1>
+  <h1>Component Selection</h1>
 
 <h2 id="h-bridge-motor-driver-options">H-Bridge Motor Driver Options</h2>
 <ol>
 <li>
 <p>TB6612FNG</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../image.png" data-desc-position="bottom"><img alt="" src="../image.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Screenshot%202025-10-16%20162904.png" data-desc-position="bottom"><img alt="" src="../Screenshot%202025-10-16%20162904.png"></a></p>
 <ul>
 <li>$1.82/each</li>
 <li><a href="https://www.digikey.com/en/products/detail/toshiba-semiconductor-and-storage/TB6612FNG-C-8-EL/1730070">link to product</a></li>
@@ -882,6 +882,36 @@
 <tr>
 <td>Compact &amp; Reliable – Dual-channel design in one chip (CW/CCW/brake/standby), enabling bidirectional control of two DC motors or paralleled outputs for more current.</td>
 <td>Peak Current is Short-Term Only – 3.2 A peaks allowed for milliseconds; not continuous—must stay under 1.2 A avg per channel for safe operation.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>DRV8833</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Screenshot%202025-10-16%20162619.png" data-desc-position="bottom"><img alt="" src="../Screenshot%202025-10-16%20162619.png"></a></p>
+<ul>
+<li>$2.62/each</li>
+<li><a href="https://www.digikey.com/en/products/detail/texas-instruments/DRV8833PW/4251165">link to product</a></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.3 V logic friendly with nSLEEP/IN pins (VIH specs and internal pulldowns provided).</td>
+<td>Thermal/current derating: continuous current limited by PCB thermal design; device will TSD if power dissipation is high—needs copper area/PowerPAD for heat.</td>
+</tr>
+<tr>
+<td>Good current + protections: up to 1.5 A RMS per bridge (pkg-dependent), 2 A peak; bridges can be paralleled; built-in OCP, TSD, UVLO, nFAULT, and sleep mode.</td>
+<td>SMD only (TSSOP/HTSSOP/QFN): not breadboard-friendly; follow layout + PowerPAD guidelines.</td>
+</tr>
+<tr>
+<td>VM 2.7–10.8 V, perfect for a ≤9 V project.</td>
+<td>External passives required: must place 10 µF at VM, 2.2 µF at VINT, 0.01 µF VCP, and (if using current limit) sense resistors—adds a bit of BOM/PCB complexity.</td>
 </tr>
 </tbody>
 </table>
