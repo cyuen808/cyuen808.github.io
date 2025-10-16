@@ -854,7 +854,7 @@
 
   <h1>Component Selection</h1>
 
-<h2 id="h-bridge-motor-driver-options">H-Bridge Motor Driver Options</h2>
+<h2 id="h-bridge-motor-driver-options"><strong>H-Bridge Motor Driver Options</strong></h2>
 <ol>
 <li>
 <p>TB6612FNG</p>
@@ -872,16 +872,16 @@
 </thead>
 <tbody>
 <tr>
-<td>3.3 V Logic Compatibility – Fully compatible with your Hub’s PIC18F57Q43 GPIO; no level shifting needed.</td>
-<td>Limited Continuous Current (≈ 1.2 A) – Suitable for small/medium DC motors; sustained higher loads cause thermal rise or shutdown.</td>
+<td>Works with 3.3 V logic, so it connects directly to the Hub without extra parts.</td>
+<td>Can only handle about 1 amp continuously, so it’s not good for larger motors.</td>
 </tr>
 <tr>
-<td>Low ON Resistance &amp; Integrated Protections – 0.5 Ω output path plus built-in thermal shutdown and undervoltage lockout ensure safe, efficient motor control.</td>
-<td>Surface-Mount Package (SSOP-24) – Requires fine-pitch soldering or breakout board for breadboard use.</td>
+<td>Has built-in protection to prevent overheating or short circuits.</td>
+<td>The small surface-mount chip is tricky to solder without a breakout board.</td>
 </tr>
 <tr>
-<td>Compact &amp; Reliable – Dual-channel design in one chip (CW/CCW/brake/standby), enabling bidirectional control of two DC motors or paralleled outputs for more current.</td>
-<td>Peak Current is Short-Term Only – 3.2 A peaks allowed for milliseconds; not continuous—must stay under 1.2 A avg per channel for safe operation.</td>
+<td>Allows you to control two motors or use both sides together for more power.</td>
+<td>The 3-amp peak rating only lasts a short time before the chip shuts down.</td>
 </tr>
 </tbody>
 </table>
@@ -902,21 +902,53 @@
 </thead>
 <tbody>
 <tr>
-<td>3.3 V logic friendly with nSLEEP/IN pins (VIH specs and internal pulldowns provided).</td>
-<td>Thermal/current derating: continuous current limited by PCB thermal design; device will TSD if power dissipation is high—needs copper area/PowerPAD for heat.</td>
+<td>Works with 3.3 V control signals, making it compatible with the Hub.</td>
+<td>Can get hot under heavy loads and needs good heat spreading on the PCB.</td>
 </tr>
 <tr>
-<td>Good current + protections: up to 1.5 A RMS per bridge (pkg-dependent), 2 A peak; bridges can be paralleled; built-in OCP, TSD, UVLO, nFAULT, and sleep mode.</td>
-<td>SMD only (TSSOP/HTSSOP/QFN): not breadboard-friendly; follow layout + PowerPAD guidelines.</td>
+<td>Handles two motors and includes built-in protection for over-current, over-temperature, and undervoltage.</td>
+<td>Only comes in surface-mount packages, so it’s not easy to use on a breadboard.</td>
 </tr>
 <tr>
-<td>VM 2.7–10.8 V, perfect for a ≤9 V project.</td>
-<td>External passives required: must place 10 µF at VM, 2.2 µF at VINT, 0.01 µF VCP, and (if using current limit) sense resistors—adds a bit of BOM/PCB complexity.</td>
+<td>Runs on 2.7–10.8 V, which fits perfectly in the project’s ≤9 V limit.</td>
+<td>Needs a few extra small capacitors for stable operation, adding some circuit complexity.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>2156-FAN8100N-FS-ND</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Screenshot%202025-10-16%20162800.png" data-desc-position="bottom"><img alt="" src="../Screenshot%202025-10-16%20162800.png"></a></p>
+<ul>
+<li>On-Hand</li>
+<li><a href="https://www.digikey.com/en/products/detail/fairchild-semiconductor/FAN8100N/11558200">link to product</a></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Works perfectly with your project’s 6–9 V motor supply and 3.3 V logic from the Hub.</td>
+<td>Can only handle about 1.5 A per channel, which limits use to smaller motors.</td>
+</tr>
+<tr>
+<td>Has built-in protection features like thermal shutdown and short-circuit safety.</td>
+<td>Older chip, no longer in production—can be harder to find replacements or breakout boards.</td>
+</tr>
+<tr>
+<td>Includes built-in diodes that protect against voltage spikes when motors switch direction.t</td>
+<td>Has a basic control setup (Forward, Reverse, Brake); requires extra PWM programming for smooth speed control.</td>
 </tr>
 </tbody>
 </table>
 </li>
 </ol>
+<p><strong>Choice:</strong> Option 1: Toshiba TB6612FNG</p>
+<p><strong>Rationale:</strong> TB6612FNG is the most practical, low-risk driver for a 6–9 V system controlled by a 3.3 V MCU. It gives you reliable bidirectional control, braking, and PWM speed control with simple wiring and strong community support.</p>
 <blockquote>
 <p>This is the example found in the assignment, uses more html</p>
 </blockquote>
@@ -976,7 +1008,7 @@
 </tr>
 <tr>
 <td>Meets surface mount constraint of project</td>
-<td></td>
+<td>....</td>
 </tr>
 </tbody>
 </table>
