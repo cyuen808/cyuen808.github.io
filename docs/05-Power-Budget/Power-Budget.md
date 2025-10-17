@@ -3,20 +3,19 @@ title: Power Budget
 ---
 
 ## Overview
-Write a overview of what you did and why you did a Power Budget.
+This section will include power consumption estimates for each subsystem once the design is finalized.  
+For now, this page serves as a placeholder with the Power Budget spreadsheet available for reference.  
 
-> Capture your power budge as a image to display. Take time to get clean breaks and a well organized layout.
-
-![budget1](budgetPg1.png){style width:"350" height:"300;"}
-
-![budget2](budgetPg2.png){style width:"350" height:"300;"}
-
-![budget3](budgetPg3.png){style width:"350" height:"300;"}
+The power budget will later calculate:  
+- Current draw for each component (microcontroller, H-bridge, motor, etc.)  
+- Power rail groupings (3.3 V logic and 6–9 V motor)  
+- Supply margins and thermal headroom  
 
 ## Conclusions
+This page will be updated after testing and measurement data are collected during the External Design Review.  
 
-From the prepare Power Budget, .....
+## Resources
+The Power Budget template can be downloaded below:  
 
-## Resouces
-
-The power budget as a PDF download is available [*here*](PowerBudgetExample.pdf), and a Microsoft Excel Sheet [*here*](PowerBudgetExample.xlsx).
+- [Power Budget (.xlsx)](PowerBudget.xlsx)  
+- [Power Budget (.pdf)](PowerBudgetExample.pdf) 
