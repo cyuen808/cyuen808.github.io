@@ -48,55 +48,48 @@ title: Component Selection
 **Rationale:** TB6612FNG is the most practical, low-risk driver for a 6–9 V system controlled by a 3.3 V MCU. It gives you reliable bidirectional control, braking, and PWM speed control with simple wiring and strong community support.
 
 
+## **DC Motor Options**
+1. FIT0495-A
 
+    ![](Screenshot 2025-10-16 165017.png)
 
-> This is the example found in the assignment, uses more html
-
-*Table 1: Example component selection*
-
-**External Clock Module**
-
-| **Solution**                                                                                                                                                                                      | **Pros**                                                                                                                                    | **Cons**                                                                                            |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| ![](image1.png)<br>Option 1.<br> XC1259TR-ND surface mount crystal<br>$1/each<br>[link to product](http://www.digikey.com/product-detail/en/ECS-40.3-S-5PX-TR/XC1259TR-ND/827366)                 | \* Inexpensive[^1]<br>\* Compatible with PSoC<br>\* Meets surface mount constraint of project                                               | \* Requires external components and support circuitry for interface<br>\* Needs special PCB layout. |
-| ![](image3.png)<br>\* Option 2. <br>\* CTX936TR-ND surface mount oscillator <br>\* $1/each <br>\* [Link to product](http://www.digikey.com/product-detail/en/636L3I001M84320/CTX936TR-ND/2292940) | \* Outputs a square wave <br>\* Stable over operating temperature <br> \* Direct interface with PSoC (no external circuitry required) range | * More expensive <br>\* Slow shipping speed                                                         |
-
-**Choice:** Option 2: CTX936TR-ND surface mount oscillator
-
-**Rationale:** A clock oscillator is easier to work with because it requires no external circuitry in order to interface with the PSoC. This is particularly important because we are not sure of the electrical characteristics of the PCB, which could affect the oscillation of a crystal. While the shipping speed is slow, according to the website if we order this week it will arrive within 3 weeks.
-
-### Style 2
-
-> Also acceptable, more markdown friendly
-
-**External Clock Module**
-
-1. XC1259TR-ND surface mount crystal
-
-    ![](image1.png)
-
-    * $1/each
-    * [link to product](http://www.digikey.com/product-detail/en/ECS-40.3-S-5PX-TR/XC1259TR-ND/827366)
+    * $9.90/each
+    * [link to product](https://www.digikey.com/en/products/detail/dfrobot/FIT0495-A/7087178)
 
     | Pros                                      | Cons                                                             |
     | ----------------------------------------- | ---------------------------------------------------------------- |
-    | Inexpensive                               | Requires external components and support circuitry for interface |
-    | Compatible with PSoC                      | Needs special PCB layout.                                        |
-    | Meets surface mount constraint of project |....
+    | Uses very little current (~0.6 A stall), making it safe and easy for the TB6612FNG to drive. | Turns slowly (about 15 RPM), so it’s not good for fast-moving applications. |
+    | Has high torque thanks to its metal gearbox; strong enough to press a button or lift small parts. | Can only handle up to 7.5 V, so it can’t use the full 9 V supply limit. |
+    | Matches the system voltage (6–7.5 V) and provides smooth, controlled motion for precise actuation. | The gearbox has some mechanical play (backlash), which can cause small delays or looseness in movement.
 
-1. CTX936TR-ND surface mount oscillator
+2. Adafruit 711 – DC Toy Motor (130 Size)
 
-    ![](image3.png)
+    ![](Screenshot 2025-10-16 171716.png)
 
-    * $1/each
-    * [Link to product](http://www.digikey.com/product-detail/en/636L3I001M84320/CTX936TR-ND/2292940)
+    * $1.95/each
+    * [link to product](https://www.digikey.com/en/products/detail/adafruit-industries-llc/711/5353610)
 
-    | Pros                                                              | Cons                |
-    | ----------------------------------------------------------------- | ------------------- |
-    | Outputs a square wave                                             | More expensive      |
-    | Stable over operating temperature                                 | Slow shipping speed |
-    | Direct interface with PSoC (no external circuitry required) range |
+    | Pros                                      | Cons                                                             |
+    | ----------------------------------------- | ---------------------------------------------------------------- |
+    | Runs on 4.5–9 V, which fits perfectly within your project’s voltage range. | Has very low torque, so it’s not good for pushing, lifting, or heavy mechanical tasks. |
+    | Fast and inexpensive, great for testing motion, vibration, or quick demos. | Comes without a gearbox or mount, so it’s harder to attach to an arm or mechanism. |
+    | Draws less than 1 A, keeping it safe for the TB6612FNG driver. | Wears out quickly under long use, since it’s a small hobby motor designed for short runs.
 
-**Choice:** Option 2: CTX936TR-ND surface mount oscillator
+3. Portescap 16G88-213E.1
 
-**Rationale:** A clock oscillator is easier to work with because it requires no external circuitry in order to interface with the PSoC. This is particularly important because we are not sure of the electrical characteristics of the PCB, which could affect the oscillation of a crystal. While the shipping speed is slow, according to the website if we order this week it will arrive within 3 weeks.
+    ![](Screenshot 2025-10-16 171959.png)
+
+    * $59.92/each
+    * [link to product](https://www.digikey.com/en/products/detail/portescap/16G88-213E-1/5232856)
+
+    | Pros                                      | Cons                                                             |
+    | ----------------------------------------- | ---------------------------------------------------------------- |
+    | Very efficient (≈84%), which means less heat, longer battery life, and smoother performance. | Expensive and harder to find since it’s a precision motor meant for specialized applications. |
+    | Low current draw (~0.55 A) keeps it safe for the TB6612FNG driver and prevents overheating. | Low torque, so it can’t handle heavy loads unless paired with a gearbox. |
+    | High build quality and smooth operation, great for precision control or demonstrations. | Requires custom mounting, since its small shaft and round body don’t fit standard brackets.
+
+
+**Choice:** Option 1: DFRobot 6 V Metal Gearmotor (FIT0495-A)
+
+**Rationale:** The DFRobot 6 V metal gearmotor was chosen because its high torque and low speed provide smooth, controlled motion for pressing a button without bouncing or damage. It runs safely on the project’s ≤ 9 V supply, draws less than 1 A, and pairs perfectly with the TB6612FNG driver for simple, reliable actuation.
+
