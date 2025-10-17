@@ -2,6 +2,8 @@
 title: Component Selection
 ---
 
+## Master Controller (HUB)
+
 ## **H-Bridge Motor Driver Options**
 1. TB6612FNG
 
