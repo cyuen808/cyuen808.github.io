@@ -28,12 +28,12 @@ It shows how my PIC18F57Q43 Curiosity Nano connects to the Audio, Driver, and UI
 ## Pin Assignment Table
 | Connector | Pin | Signal | Direction | MCU Pin | Voltage |
 |------------|-----|---------|------------|----------|----------|
-| UI Board | 1 | TX | Hub → UI | RA1 | 5 V |
-|  | 2 | RX | UI → Hub | RB2 | 5 V |
-|  | 3 | Button Input | UI → Hub | RA1 | 5 V |
-|  | 5 | Status LED | Hub → UI | RC4 | 5 V |
-| Audio Board | 3 | Clap Signal | Audio → Hub | RD0 | 5 V |
-| Driver Board | 3 | Lamp Toggle | Hub → Driver | RD2 | 5 V |
+| UI Board | 1 | TX | Hub → UI | RC2 | 3.3 V |
+|  | 2 | RX | UI → Hub | RC3 | 3.3 V |
+|  | 3 | Button Input | UI → Hub | RB4 | 3.3 V |
+|  | 5 | Status LED | Hub → UI | RC4 | 3.3 V |
+| Audio Board | 3 | Clap Signal | Audio → Hub | RD0 | 3.3 V |
+| Driver Board | 3 | Lamp Toggle | Hub → Driver | RD2 | 3.3 V |
 
 ## Future Work
 Next step: convert this block diagram into a detailed hardware schematic for my PCB.
