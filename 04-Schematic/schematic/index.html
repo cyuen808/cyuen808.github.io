@@ -646,14 +646,38 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resouces" class="md-nav__link">
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schematic-preview" class="md-nav__link">
     <span class="md-ellipsis">
-      Resouces
+      Schematic Preview
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#downloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Downloads
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -806,14 +830,38 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resouces" class="md-nav__link">
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schematic-preview" class="md-nav__link">
     <span class="md-ellipsis">
-      Resouces
+      Schematic Preview
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#downloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Downloads
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -843,11 +891,22 @@
   <h1>Schematic</h1>
 
 <h2 id="overview">Overview</h2>
-<p>This schematic is design to support .... (highlight functionally, power, and controller).</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Screenshot.png" data-desc-position="bottom"><img alt="schematic" height:_300_="height:&quot;300;&quot;" src="../Screenshot.png" style="style" width:_350_="width:&quot;350&quot;"></a>
-<strong>Figure ##:</strong> Showing a example schematic.</p>
-<h2 id="resouces">Resouces</h2>
-<p>The schematic as a PDF download is available <a href="../ExampleSchematic.pdf"><em>here</em></a>, and the Zip folder of the project <a href="../dummyZip.zip"><em>here</em></a>.</p>
+<p>This schematic shows my PIC18F57Q43 Curiosity Nano controlling a TB6612FNG motor-driver circuit with a 6 V metal gearmotor (FIT0495A). It includes a 9V → 5 V LM7805 regulator, fuse protection, 3.3 V logic interface, and all system connections defined in our team block diagram.</p>
+<h3 id="schematic-preview">Schematic Preview</h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../C_Yuen_Hub_Schematic.png" data-desc-position="bottom"><img alt="C_Yuen_Hub_Schematic" src="../C_Yuen_Hub_Schematic.png"></a></p>
+<h3 id="downloads">Downloads</h3>
+<ul>
+<li><a href="../C_Yuen_Hub_Schematic.pdf">View full PDF schematic</a>  </li>
+<li><a href="../C_Yuen_Hub_Project.zip">Download KiCad project ZIP</a></li>
+</ul>
+<h3 id="notes">Notes</h3>
+<ul>
+<li>Logic = 3.3 V (VTG from PIC)  </li>
+<li>Motor rail = 6 V external  </li>
+<li>Input 9V DC → Fuse → LM7805 → +5 V rail  </li>
+<li>TB6612FNG internal MOSFET diodes handle motor back-EMF  </li>
+</ul>
+<p><em>Last updated on 2025-10-18</em></p>
 
 
 
