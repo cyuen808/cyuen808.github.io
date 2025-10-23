@@ -1,5 +1,5 @@
 ---
-title: Individal Block Diagram
+title: Individual Block Diagram
 tags:
 - tag1
 - tag2
@@ -10,30 +10,34 @@ tags:
 
 
 ## Overview
-This page describes the hardware layout of my subsystem (Hub) for the team clap-light project.  
-It shows how my PIC18F57Q43 Curiosity Nano connects to the Audio, Driver, and UI boards using the 8-pin ribbon-cable standard.
+This page describes the hardware layout of my subsystem (Hub) for the team clap-activated light project. The Master Controller (PIC18F57Q43 Curiosity Nano) processes sensor data from the Audio, Filter, and Sensor Front-End boards, then drives the actuator to control the lamp output. The design uses an 8-pin ribbon-cable standard for consistent power and signal connections across all subsystems.
 
 
 ## Block Diagram 
-![Caleb Yuen: Master Controller (Hub) ](MasterController.png)
-*Figure 1: Subsystem block diagram for Master Controller.*
+![Caleb Yuen: Master Controller (Hub) ](HubController.png)
+**Microcontroller:** Microchip PIC18F57Q43 Curiosity Nano  
 
-## Description
-- **Microcontroller:** Microchip PIC18F57Q43 Curiosity Nano  
-- **Inputs:** Clap signal (from Audio board), Button input (from UI board)  
-- **Outputs:** Lamp toggle (to Driver board), Status LED (to UI board)  
-- **Communication:** UART (TX/RX pins 1–2 on ribbon cable)  
-- **Power:** +5 V VBUS from USB; distributed to other boards  
+**Inputs:**  
+- Clap Signal (from Audio Board)  
+- Potentiometer Input (from Filter Board)  
+- Light Sensor (from Sensor Front-End)  
+
+**Outputs:**  
+- Lamp (Actuator) – toggles ON/OFF based on clap detection  
+- Status LEDs (to Filter Board)  
+
+**Communication:** I²C or digital I/O between subsystems via shared ribbon interface  
+**Power:** +5 V USB input regulated to 3.3 V logic; common GND shared across all boards  
 
 ## Pin Assignment Table
 | Connector | Pin | Signal | Direction | MCU Pin | Voltage |
-|------------|-----|---------|------------|----------|----------|
-| UI Board | 1 | TX | Hub → UI | RC3 | 3.3 V |
-|  | 2 | RX | UI → Hub | RC2 | 3.3 V |
-|  | 3 | Button Input | UI → Hub | RA4 | 3.3 V |
-|  | 5 | Status LED | Hub → UI | RC4 | 3.3 V |
+|:-----------|:---:|:--------|:-----------|:---------|:---------|
+| Filter Board | 1 | Potentiometer Input | Filter → Hub | RA1 | 3.3 V |
+| Filter Board | 6 | Status LEDs | Hub → Filter | RB2 | 3.3 V |
 | Audio Board | 3 | Clap Signal | Audio → Hub | RD0 | 3.3 V |
-| Driver Board | 3 | Lamp Toggle | Hub → Driver | RD2 | 3.3 V |
+| Sensor Front-End | 3 | Light Sensor | Sensor → Hub | RD1 | 3.3 V |
+| Actuator (Lamp) | — | Lamp Control | Hub → Lamp | RD2 | 3.3 V |
+
 
 ## Future Work
-Next step: convert this block diagram into a detailed hardware schematic for my PCB.
+Next step: implement lamp control through a MOSFET or transistor driver circuit on the Hub PCB to safely power the actuator.
