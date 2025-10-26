@@ -32,14 +32,11 @@ This project combines key embedded system concepts—signal processing, sensor i
 
 
 ### My Contribution
-As the Team Lead of group and person in charge of the Master Controller, my role is to make sure all the other boards work together and to handle the signal that turns the lamp on and off.  
+As the Team Lead and Master Controller (Hub) designer for the ClapSense project, Caleb developed the main subsystem that coordinates all communication between the Audio Front-End, Filter Board, and Sensor Front-End. His board, built around the Microchip PIC18F57Q43 Curiosity Nano, manages signal flow, initialization, and decision-making for the entire system.
 
-Here are the main things I worked on:  
-- 
-- 
-- 
-- 
-- 
+He designed the schematic for the Hub circuit, selected and justified key components such as the TB6612FNG H-Bridge and FIT0495-A DC motor, and documented how the 3.3 V logic, 5 V power regulation, and actuator control integrate safely within the team’s modular 8-pin ribbon interface.
+
+Beyond technical design, he ensured consistent documentation, power and logic standardization across all boards, and led coordination between team members during report development and website integration.
 
 To review the details listed of the material used to construct the subsection, you can review it in the ["BOM"](https://embedded-systems-design.github.io/EGR304DataSheetTemplate/03-BOM/BOM/) section of the datasheet.
 
