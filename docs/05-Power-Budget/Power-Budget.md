@@ -17,5 +17,5 @@ This page will be updated after testing and measurement data are collected durin
 ## Resources
 The Power Budget template can be downloaded below:  
 
-- [Power Budget (.xlsx)](PowerBudget.xlsx)  
-- [Power Budget (.pdf)](PowerBudgetExample.pdf) 
+- [Power Budget (.xlsx)](EGR304-Team204-PowerBudget.xlsx)  
+- [Power Budget (.pdf)](EGR304-Team204-PowerBudget.pdf) 
