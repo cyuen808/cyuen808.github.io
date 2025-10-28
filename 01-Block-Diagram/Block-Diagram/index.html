@@ -528,15 +528,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#future-work" class="md-nav__link">
-    <span class="md-ellipsis">
-      Future Work
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -844,15 +835,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#future-work" class="md-nav__link">
-    <span class="md-ellipsis">
-      Future Work
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -892,8 +874,8 @@
 <p><strong>Outputs:</strong><br>
 - Lamp (Actuator) – toggles ON/OFF based on clap detection<br>
 - Status LEDs (to Filter Board)  </p>
-<p><strong>Communication:</strong> I²C or digital I/O between subsystems via shared ribbon interface<br>
-<strong>Power:</strong> +5 V USB input regulated to 3.3 V logic; common GND shared across all boards  </p>
+<p><strong>Communication:</strong> Discrete GPIO over ribbon; no I²C in Rev 1. 
+<strong>Power:</strong> “9 V DC in → 5 V (LM7805) → 3.3 V logic; common GND shared across all boards  </p>
 <h2 id="pin-assignment-table">Pin Assignment Table</h2>
 <table>
 <thead>
@@ -949,8 +931,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="future-work">Future Work</h2>
-<p>Next step: implement lamp control through a MOSFET or transistor driver circuit on the Hub PCB to safely power the actuator.</p>
 
 
 
