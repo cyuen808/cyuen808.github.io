@@ -28,7 +28,7 @@ This page describes the hardware layout of my subsystem (Hub) for the team clap-
 - Actuator control to Output Driver (TB6612): PWM_MOTOR, MOTOR_IN1, MOTOR_IN2, MOTOR_STBY
 
 **Communication:** Discrete GPIO over ribbon; no I²C in Rev 1. 
-**Power:** “9 V DC in → 5 V (LM7805) → 3.3 V logic; common GND shared across all boards  
+**Power:** 9 V DC in → 5 V (LM7805) → 3.3 V logic; common GND shared across all boards  
 
 ## Pin Assignment Table
 | Pin | Signal             | Direction         | Source → Destination     | MCU Pin (PIC18F57Q43) | Voltage | Notes |
