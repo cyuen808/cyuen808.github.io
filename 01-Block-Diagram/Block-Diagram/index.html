@@ -867,16 +867,17 @@
 <h2 id="block-diagram">Block Diagram</h2>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../HubController.png" data-desc-position="bottom"><img alt="Caleb Yuen: Master Controller (Hub) " src="../HubController.png"></a>
 <strong>Microcontroller:</strong> Microchip PIC18F57Q43 Curiosity Nano  </p>
-<p><strong>Inputs:</strong><br>
+<p><strong>Inputs:</strong>
 - Clap signal (from Audio board)
-- UI button (from UI board)
-- Lamp toggle (from UI board)</p>
-<p><strong>Outputs:</strong><br>
-- Status LED (to UI board)
+- Filter signal (from Filter board)
+- Lamp toggle (from Filter board)</p>
+<p><strong>Outputs:</strong>
+- Status LED (to Filter board)
 - Heartbeat LED (on Hub)
-- Actuator control to Output Driver (TB6612): PWM_MOTOR, MOTOR_IN1, MOTOR_IN2, MOTOR_STBY</p>
-<p><strong>Communication:</strong> Discrete GPIO over ribbon; no I²C in Rev 1. 
-<strong>Power:</strong> 9 V DC in → 5 V (LM7805) → 3.3 V logic; common GND shared across all boards  </p>
+- Actuator control to Sensor Front-End: <code>PWM_MOTOR</code>, <code>MOTOR_IN1</code>, <code>MOTOR_IN2</code>, <code>MOTOR_STBY</code></p>
+<p><strong>Communication:</strong> Discrete GPIO over ribbon; no I²C in Rev 1.<br>
+<strong>Power:</strong> 9 V DC in → 5 V (LM7805) → 3.3 V logic; common GND shared across all boards.</p>
+<hr>
 <h2 id="pin-assignment-table">Pin Assignment Table</h2>
 <table>
 <thead>
@@ -898,13 +899,13 @@
 <td>—</td>
 <td>—</td>
 <td>0 V</td>
-<td>Common ground reference across all subsystems</td>
+<td>Common ground across all subsystems</td>
 </tr>
 <tr>
 <td>2</td>
 <td>+5V_SYS</td>
 <td>—</td>
-<td>Power Supply → All Boards</td>
+<td>Power → All Boards</td>
 <td>—</td>
 <td>5 V</td>
 <td>Regulated output from LM7805</td>
@@ -920,27 +921,27 @@
 </tr>
 <tr>
 <td>4</td>
-<td>UI_BUTTON_IN</td>
+<td>FILTER_SIGNAL_IN</td>
 <td>Input</td>
-<td>UI → Hub</td>
+<td>Filter → Hub</td>
 <td>(assign pin)</td>
 <td>3.3 V (via divider)</td>
-<td>User button input</td>
+<td>Filtered/threshold logic</td>
 </tr>
 <tr>
 <td>5</td>
-<td>LAMP_TOGGLE</td>
+<td>FILTER_TOGGLE</td>
 <td>Input</td>
-<td>UI → Hub</td>
+<td>Filter → Hub</td>
 <td>(assign pin)</td>
 <td>3.3 V (via divider)</td>
-<td>Light toggle control</td>
+<td>Lamp toggle control</td>
 </tr>
 <tr>
 <td>6</td>
-<td>UI_STATUS_LED</td>
+<td>FILTER_STATUS_LED</td>
 <td>Output</td>
-<td>Hub → UI</td>
+<td>Hub → Filter</td>
 <td>(assign pin)</td>
 <td>3.3 V</td>
 <td>Status indicator LED</td>
@@ -949,25 +950,25 @@
 <td>7</td>
 <td>PWM_MOTOR</td>
 <td>Output (PWM)</td>
-<td>Hub → Output Driver</td>
+<td>Hub → Sensor Front-End</td>
 <td>(assign pin)</td>
 <td>3.3 V</td>
-<td>Lamp or motor dimming signal</td>
+<td>Dimming / speed control</td>
 </tr>
 <tr>
 <td>8</td>
 <td>MOTOR_STBY</td>
 <td>Output</td>
-<td>Hub → Output Driver</td>
+<td>Hub → Sensor Front-End</td>
 <td>(assign pin)</td>
 <td>3.3 V</td>
-<td>Enables motor driver IC</td>
+<td>Enables actuator driver</td>
 </tr>
 <tr>
 <td>9</td>
 <td>MOTOR_IN1</td>
 <td>Output</td>
-<td>Hub → Output Driver</td>
+<td>Hub → Sensor Front-End</td>
 <td>(assign pin)</td>
 <td>3.3 V</td>
 <td>Direction control A</td>
@@ -976,7 +977,7 @@
 <td>10</td>
 <td>MOTOR_IN2</td>
 <td>Output</td>
-<td>Hub → Output Driver</td>
+<td>Hub → Sensor Front-End</td>
 <td>(assign pin)</td>
 <td>3.3 V</td>
 <td>Direction control B</td>
@@ -992,21 +993,21 @@
 </tr>
 <tr>
 <td>12</td>
-<td>UART_RX_UI</td>
+<td>UART_RX_FILTER</td>
 <td>Input (optional)</td>
-<td>UI → Hub (Debug)</td>
+<td>Filter → Hub (Debug)</td>
 <td>(assign pin)</td>
 <td>3.3 V</td>
-<td>Serial receive for UI board</td>
+<td>Serial receive for Filter board</td>
 </tr>
 <tr>
 <td>13</td>
-<td>UART_TX_UI</td>
+<td>UART_TX_FILTER</td>
 <td>Output (optional)</td>
-<td>Hub → UI (Debug)</td>
+<td>Hub → Filter (Debug)</td>
 <td>(assign pin)</td>
 <td>3.3 V</td>
-<td>Serial transmit for UI board</td>
+<td>Serial transmit to Filter board</td>
 </tr>
 <tr>
 <td>14</td>
@@ -1020,11 +1021,10 @@
 </tbody>
 </table>
 <p><strong>Notes:</strong>
-- All PIC18F57Q43 logic operates at <strong>3.3 V</strong>.<br>
-- External 5 V signals are stepped down using <strong>10 kΩ / 20 kΩ voltage dividers</strong>.<br>
-- Only +5V_SYS and GND are shared between boards; motor VM remains local to Output Driver.<br>
-- Interleave GND pins (1 and 11) in ribbon to minimize noise.<br>
-- UART pins (12–13) are optional for debugging or UI communication.</p>
+- All PIC18F57Q43 logic operates at 3.3 V.<br>
+- External 5 V signals are stepped down using 10 kΩ / 20 kΩ resistor dividers.<br>
+- Only +5V_SYS and GND are shared between boards; interleave GND pins (1 and 11) in the ribbon to minimize noise.<br>
+- UART pins (12–13) are optional for debugging with the Filter board.</p>
 
 
 
