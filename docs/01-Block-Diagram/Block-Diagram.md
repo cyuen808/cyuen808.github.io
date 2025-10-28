@@ -26,8 +26,8 @@ This page describes the hardware layout of my subsystem (Hub) for the team clap-
 - Lamp (Actuator) – toggles ON/OFF based on clap detection  
 - Status LEDs (to Filter Board)  
 
-**Communication:** I²C or digital I/O between subsystems via shared ribbon interface  
-**Power:** +5 V USB input regulated to 3.3 V logic; common GND shared across all boards  
+**Communication:** Discrete GPIO over ribbon; no I²C in Rev 1. 
+**Power:** “9 V DC in → 5 V (LM7805) → 3.3 V logic; common GND shared across all boards  
 
 ## Pin Assignment Table
 | Connector | Pin | Signal | Direction | MCU Pin | Voltage |
@@ -39,5 +39,3 @@ This page describes the hardware layout of my subsystem (Hub) for the team clap-
 | Actuator (Lamp) | — | Lamp Control | Hub → Lamp | RD2 | 3.3 V |
 
 
-## Future Work
-Next step: implement lamp control through a MOSFET or transistor driver circuit on the Hub PCB to safely power the actuator.
