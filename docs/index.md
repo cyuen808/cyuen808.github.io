@@ -28,7 +28,7 @@ Clapsense is built around a single Microchip PIC18F57Q43 Curiosity Nano that ser
 The Master Controller processes all inputs and sends a command to the lamp actuator, turning the light on or off at the right time.  
 This project combines key embedded system concepts—signal processing, sensor integration, and actuator control—to create a reliable and hands-free lighting experience.
 
-* Add context that ties into the link to your [team report.](https://embedded-systems-design.github.io/EGR304TeamTemplate/)
+*[ClapSense Team Report.](https://asu-egr304-2025-f-204.github.io/)
 
 
 ### My Contribution
@@ -38,6 +38,3 @@ He designed the schematic for the Hub circuit, selected and justified key compon
 
 Beyond technical design, he ensured consistent documentation, power and logic standardization across all boards, and led coordination between team members during report development and website integration.
 
-To review the details listed of the material used to construct the subsection, you can review it in the ["BOM"](https://embedded-systems-design.github.io/EGR304DataSheetTemplate/03-BOM/BOM/) section of the datasheet.
-
-For all the sections
