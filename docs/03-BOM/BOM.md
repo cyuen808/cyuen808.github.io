@@ -5,10 +5,13 @@ tags:
 - tag2
 ---
 
-## Overview
-written context
+# Bill of Materials – ClapSense Hub (Caleb Yuen)
 
-## Bill of Materials
+This Bill of Materials (BOM) lists all electronic components and hardware needed to build and prototype the **Master Controller (Hub)** subsystem of the ClapSense project.  
+The Hub uses the **PIC18F57Q43 Curiosity Nano** as its core microcontroller and interfaces with other subsystems (Audio Front-End, Filter Board, Sensor Front-End) via an 8-pin ribbon connector.
+
+
+## Component List
 
 
 | Item | Component | Description | Example Part / Value | Quantity | Vendor | Vendor Link | Notes |
