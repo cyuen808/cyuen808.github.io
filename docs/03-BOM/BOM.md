@@ -8,21 +8,40 @@ tags:
 ## Overview
 written context
 
-## Bill of Materials Example (as Table)
+## Bill of Materials
 
-*Table ##: An example of one approach to adding your BOM table to this section.*
 
-| **Part Name/Description** | **Qty** | **Unit Cost** | **Total Cost** | **Manufacture** | **Manufacturer #** | **Vendor Link** |**Datasheet Link** | **Schematic Reference Designators** |
-|:--------------------|:----|:---------------|:-----|:--------|:-----|:-----|:----|:-----|
-8-bit SIPO/SISO Shift Register, SOIC-16 package | 1 | $0.49 | $ 0.49 | NXP | 74HC595D,112 | [DigiKey](https://www.digikey.com/en/products/detail/nexperia-usa-inc/74HC595D-112/763550) | [datasheet link](https://assets.nexperia.com/documents/data-sheet/74HC_HCT595.pdf) | U1 |
-0.1 µF Ceramic Capacitor, +/-10%, X7R, 50V, 0805 package |10 | 0.2750 | $2.75 | KEMET | C0805F104K5RACTU | PRLTA 109 |n/a | C2, C4, C6, C7, C8, C9, C10, C11, C12, C16
+| Item | Component | Description | Example Part / Value | Quantity | Vendor | Vendor Link | Notes |
+|------|------------|--------------|----------------------|-----------|---------|--------------|-------|
+| 1 | PIC18F57Q43 Curiosity Nano | Main MCU Board | DM164150 | 1 | Microchip / Digi-Key | [Microchip Direct](https://www.microchipdirect.com/) | Master controller for entire system |
+| 2 | 8-Pin Ribbon Connector | Hub-to-spoke communication | 3M 89109-0081 | 2 | Digi-Key | [Digi-Key](https://www.digikey.com/en/products/detail/3m/89109-0081) | Used to connect subsystems |
+| 3 | Male Header (2×4) | Ribbon cable interface | M80-6100842 | 2 | Digi-Key | [Digi-Key](https://www.digikey.com/en/products/detail/harwin/M80-6100842) | Connects Hub to ribbon cable |
+| 4 | N-MOSFET | Lamp driver transistor | IRLZ44N / AO3400A | 2 | Digi-Key | [Digi-Key](https://www.digikey.com/en/products/detail/IRLZ44N) | Controls high-current lamp |
+| 5 | LED (RA2) | Indicator LED | 3mm Red LED | 2 | Digi-Key | [Digi-Key](https://www.digikey.com/en/products/filter/leds-discrete) | Status indicator |
+| 6 | Resistor | For LED current limiting | 330 Ω (¼W) | 3 | Digi-Key | [Digi-Key](https://www.digikey.com/en/products/filter/resistors-fixed) | Limits LED current |
+| 7 | Barrel Jack Connector | Power input | PJ-002AH | 1 | Digi-Key | [Digi-Key](https://www.digikey.com/en/products/detail/cui-devices/PJ-002AH) | Power jack for 9V input |
+| 8 | Voltage Regulator | 9V → 5V conversion | LM7805 / AMS1117-5.0 | 2 | Digi-Key | [Digi-Key](https://www.digikey.com/en/products/detail/texas-instruments/LM7805CT) | Provides stable 5V rail |
+| 9 | Capacitor | Power decoupling | 0.1 µF + 10 µF | 4 | Digi-Key | [Digi-Key](https://www.digikey.com/en/products/filter/ceramic-capacitors) | Noise filtering for MCU and regulator |
+| 10 | Jumper Pins / Test Points | Debug and testing | TP001 | 4 | Digi-Key | [Digi-Key](https://www.digikey.com/en/products/detail/keystone-electronics/5019) | Used for debugging / voltage checks |
+| 11 | Breadboard + Dupont Wires | Prototyping hardware | – | 1 set | Amazon | [Amazon](https://www.amazon.com/) | For circuit breadboard testing |
+| 12 | USB Cable | For Nano power & programming | USB Micro-B | 1 | – | – | Standard USB cable |
 
-Note: Setting it up as a table is nice because it is completely viewable without scaling issues. <ins>Downside</ins> is that you have to do the math.
+---
 
-* You could also import your BOM via a screenshot of the spreadsheet created BOM
+## ⚙️ Ordering Notes
 
-## Bill of Materials Example (as Image)
-![](BOM-Screenshot.png){style width: "2000"}
-**Figure 2:** Example Bill of Materials as a screenshot.
+- Order **1 per breadboard prototype**, **1 per PCB instance**, plus **1–2 extras** for backup.  
+- Verify availability and shipping time before submitting order forms.  
+- Group items by vendor (Digi-Key, Microchip Direct, Amazon).  
+- Use the [EGR-3x4 Purchase Request Template](https://www.dropbox.com/scl/fi/zhj1hgknkkmxri7umonv2/EGR-3x4-Purchase-Request-2021.xlsx?dl=0) to complete vendor order sheets.  
+- Submit **.xlsx** purchase request via email to **Dr. Kevin Nichols (kwnicho@asu.edu)** and upload your **BOM page PDF + Excel form** to Canvas.
 
-As you can see, the text can be difficult to read without opening the image.
+---
+
+## 🧠 Design Reference
+
+- **Microcontroller:** [PIC18F57Q43 Curiosity Nano User Guide](https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/UserGuides/PIC18F57Q43-Curiosity-Nano-HW-UserGuide-DS40002186B.pdf)  
+- **Subsystem Architecture:** Hub-and-Spoke system (Caleb = Hub)  
+- **Power Input:** 9V Barrel Jack → 5V Regulator → PIC 3.3V Logic  
+
+---
