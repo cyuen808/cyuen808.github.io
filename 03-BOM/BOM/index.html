@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#bill-of-materials-clapsense-hub-caleb-yuen" class="md-skip">
+        <a href="#bill-of-materials-clapsense-hub-master-controller" class="md-skip">
           Skip to content
         </a>
       
@@ -598,27 +598,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#component-list" class="md-nav__link">
+  <a href="#electronic-components" class="md-nav__link">
     <span class="md-ellipsis">
-      Component List
+      Electronic Components
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ordering-notes" class="md-nav__link">
+  <a href="#system-notes" class="md-nav__link">
     <span class="md-ellipsis">
-      Ordering Notes
+      System Notes
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#design-reference" class="md-nav__link">
+  <a href="#order-submission-instructions" class="md-nav__link">
     <span class="md-ellipsis">
-      Design Reference
+      Order Submission Instructions
     </span>
   </a>
   
@@ -815,27 +815,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#component-list" class="md-nav__link">
+  <a href="#electronic-components" class="md-nav__link">
     <span class="md-ellipsis">
-      Component List
+      Electronic Components
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ordering-notes" class="md-nav__link">
+  <a href="#system-notes" class="md-nav__link">
     <span class="md-ellipsis">
-      Ordering Notes
+      System Notes
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#design-reference" class="md-nav__link">
+  <a href="#order-submission-instructions" class="md-nav__link">
     <span class="md-ellipsis">
-      Design Reference
+      Order Submission Instructions
     </span>
   </a>
   
@@ -864,163 +864,216 @@
   
 
 
-<h1 id="bill-of-materials-clapsense-hub-caleb-yuen">Bill of Materials – ClapSense Hub (Caleb Yuen)</h1>
-<p>This Bill of Materials (BOM) lists all electronic components and hardware needed to build and prototype the <strong>Master Controller (Hub)</strong> subsystem of the ClapSense project.<br>
-The Hub uses the <strong>PIC18F57Q43 Curiosity Nano</strong> as its core microcontroller and interfaces with other subsystems (Audio Front-End, Filter Board, Sensor Front-End) via an 8-pin ribbon connector.</p>
-<h2 id="component-list">Component List</h2>
+<h1 id="bill-of-materials-clapsense-hub-master-controller">Bill of Materials – ClapSense Hub (Master Controller)</h1>
+<p>This Bill of Materials (BOM) lists all components used in the <strong>Hub Subsystem (Master Controller)</strong> for the ClapSense project.<br>
+The hub interfaces with the <strong>Filter Board</strong> and <strong>Sensor Front-End</strong> using an 8-pin ribbon connector and drives the <strong>lamp actuator</strong> through the TB6612FNG motor driver.</p>
+<hr>
+<h2 id="electronic-components">Electronic Components</h2>
 <table>
 <thead>
 <tr>
 <th>Item</th>
+<th>Ref(s)</th>
 <th>Component</th>
-<th>Description</th>
-<th>Example Part / Value</th>
-<th>Quantity</th>
+<th>Description / Value</th>
+<th>Qty</th>
 <th>Vendor</th>
-<th>Vendor Link</th>
+<th>Example Part # / Link</th>
 <th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>1</td>
-<td>PIC18F57Q43 Curiosity Nano</td>
-<td>Main MCU Board</td>
-<td>DM164150</td>
+<td>U1</td>
+<td>PIC18F57Q43-CY</td>
+<td>Microcontroller (40-pin)</td>
 <td>1</td>
-<td>Microchip / Digi-Key</td>
-<td><a href="https://www.microchipdirect.com/">Microchip Direct</a></td>
-<td>Master controller for entire system</td>
+<td>Microchip</td>
+<td><a href="https://www.microchipdirect.com/">DM164150</a></td>
+<td>Main controller</td>
 </tr>
 <tr>
 <td>2</td>
-<td>8-Pin Ribbon Connector</td>
-<td>Hub-to-spoke communication</td>
-<td>3M 89109-0081</td>
-<td>2</td>
+<td>U2</td>
+<td>TB6612FNG</td>
+<td>Dual Motor Driver IC</td>
+<td>1</td>
 <td>Digi-Key</td>
-<td><a href="https://www.digikey.com/en/products/detail/3m/89109-0081">Digi-Key</a></td>
-<td>Used to connect subsystems</td>
+<td><a href="https://www.digikey.com/en/products/detail/toshiba/TB6612FNG">TB6612FNG</a></td>
+<td>Controls lamp actuator</td>
 </tr>
 <tr>
 <td>3</td>
-<td>Male Header (2×4)</td>
-<td>Ribbon cable interface</td>
-<td>M80-6100842</td>
-<td>2</td>
-<td>Digi-Key</td>
-<td><a href="https://www.digikey.com/en/products/detail/harwin/M80-6100842">Digi-Key</a></td>
-<td>Connects Hub to ribbon cable</td>
+<td>M2</td>
+<td>DC Motor</td>
+<td>Actuator (load)</td>
+<td>1</td>
+<td>DFRobot</td>
+<td><a href="https://www.dfrobot.com/product-535.html">FIT0495A</a></td>
+<td>Lamp actuator motor</td>
 </tr>
 <tr>
 <td>4</td>
-<td>N-MOSFET</td>
-<td>Lamp driver transistor</td>
-<td>IRLZ44N / AO3400A</td>
-<td>2</td>
+<td>U3</td>
+<td>LM7805 TO-220</td>
+<td>Voltage Regulator (9 V → 5 V)</td>
+<td>1</td>
 <td>Digi-Key</td>
-<td><a href="https://www.digikey.com/en/products/detail/IRLZ44N">Digi-Key</a></td>
-<td>Controls high-current lamp</td>
+<td><a href="https://www.digikey.com/en/products/detail/texas-instruments/LM7805CT">LM7805CT</a></td>
+<td>Generates +5 V rail</td>
 </tr>
 <tr>
 <td>5</td>
-<td>LED (RA2)</td>
-<td>Indicator LED</td>
-<td>3mm Red LED</td>
-<td>2</td>
+<td>J1</td>
+<td>Barrel Jack Connector</td>
+<td>Power input (9 V DC)</td>
+<td>1</td>
 <td>Digi-Key</td>
-<td><a href="https://www.digikey.com/en/products/filter/leds-discrete">Digi-Key</a></td>
-<td>Status indicator</td>
+<td><a href="https://www.digikey.com/en/products/detail/cui-devices/PJ-002AH">PJ-002AH</a></td>
+<td>9 V adapter input</td>
 </tr>
 <tr>
 <td>6</td>
-<td>Resistor</td>
-<td>For LED current limiting</td>
-<td>330 Ω (¼W)</td>
-<td>3</td>
+<td>F1</td>
+<td>Fuse</td>
+<td>1 A resettable fuse</td>
+<td>1</td>
 <td>Digi-Key</td>
-<td><a href="https://www.digikey.com/en/products/filter/resistors-fixed">Digi-Key</a></td>
-<td>Limits LED current</td>
+<td><a href="https://www.digikey.com/en/products/detail/littelfuse/RXE010">RXE010</a></td>
+<td>Power protection</td>
 </tr>
 <tr>
 <td>7</td>
-<td>Barrel Jack Connector</td>
-<td>Power input</td>
-<td>PJ-002AH</td>
-<td>1</td>
+<td>J2, J3, J5</td>
+<td>2×4 Header (8-Pin Ribbon)</td>
+<td>Subsystem connectors</td>
+<td>3</td>
 <td>Digi-Key</td>
-<td><a href="https://www.digikey.com/en/products/detail/cui-devices/PJ-002AH">Digi-Key</a></td>
-<td>Power jack for 9V input</td>
+<td><a href="https://www.digikey.com/en/products/detail/harwin/M80-6100842">M80-6100842</a></td>
+<td>Connects Hub to other boards</td>
 </tr>
 <tr>
 <td>8</td>
-<td>Voltage Regulator</td>
-<td>9V → 5V conversion</td>
-<td>LM7805 / AMS1117-5.0</td>
-<td>2</td>
+<td>R1</td>
+<td>220 Ω</td>
+<td>Sensor bias resistor</td>
+<td>1</td>
 <td>Digi-Key</td>
-<td><a href="https://www.digikey.com/en/products/detail/texas-instruments/LM7805CT">Digi-Key</a></td>
-<td>Provides stable 5V rail</td>
+<td>CF14JT220R</td>
+<td>Light sensor filter</td>
 </tr>
 <tr>
 <td>9</td>
-<td>Capacitor</td>
-<td>Power decoupling</td>
-<td>0.1 µF + 10 µF</td>
-<td>4</td>
+<td>R2, R5</td>
+<td>10 kΩ</td>
+<td>Signal pull-down resistors</td>
+<td>2</td>
 <td>Digi-Key</td>
-<td><a href="https://www.digikey.com/en/products/filter/ceramic-capacitors">Digi-Key</a></td>
-<td>Noise filtering for MCU and regulator</td>
+<td>CF14JT10K0</td>
+<td>For CLAP and FILTER inputs</td>
 </tr>
 <tr>
 <td>10</td>
-<td>Jumper Pins / Test Points</td>
-<td>Debug and testing</td>
-<td>TP001</td>
-<td>4</td>
+<td>R3</td>
+<td>1 kΩ</td>
+<td>LED current-limit</td>
+<td>1</td>
 <td>Digi-Key</td>
-<td><a href="https://www.digikey.com/en/products/detail/keystone-electronics/5019">Digi-Key</a></td>
-<td>Used for debugging / voltage checks</td>
+<td>CF14JT1K00</td>
+<td>RA2 status LED</td>
 </tr>
 <tr>
 <td>11</td>
-<td>Breadboard + Dupont Wires</td>
-<td>Prototyping hardware</td>
-<td>–</td>
-<td>1 set</td>
-<td>Amazon</td>
-<td><a href="https://www.amazon.com/">Amazon</a></td>
-<td>For circuit breadboard testing</td>
+<td>R4</td>
+<td>10 kΩ</td>
+<td>Standby pull-down (TB6612FNG)</td>
+<td>1</td>
+<td>Digi-Key</td>
+<td>CF14JT10K0</td>
+<td>Motor STBY control</td>
 </tr>
 <tr>
 <td>12</td>
-<td>USB Cable</td>
-<td>For Nano power &amp; programming</td>
-<td>USB Micro-B</td>
+<td>C2, C4, C6, C7</td>
+<td>0.1 µF</td>
+<td>Decoupling capacitors</td>
+<td>4</td>
+<td>Digi-Key</td>
+<td>CL21B104KBCNNNC</td>
+<td>Noise suppression</td>
+</tr>
+<tr>
+<td>13</td>
+<td>C3</td>
+<td>33 µF Electrolytic</td>
+<td>Regulator input filter</td>
+<td>1</td>
+<td>Digi-Key</td>
+<td>EEU-FR1V330</td>
+<td>Power stability</td>
+</tr>
+<tr>
+<td>14</td>
+<td>C5</td>
+<td>47 µF Electrolytic</td>
+<td>Regulator output filter</td>
+<td>1</td>
+<td>Digi-Key</td>
+<td>EEU-FR1V470</td>
+<td>Output smoothing</td>
+</tr>
+<tr>
+<td>15</td>
+<td>D1</td>
+<td>LED (Red 3 mm)</td>
+<td>Indicator LED</td>
+<td>1</td>
+<td>Digi-Key</td>
+<td>WP710A10ID</td>
+<td>RA2 status indicator</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Breadboard / Jumper Wires</td>
+<td>Prototyping accessory</td>
+<td>–</td>
+<td>1 set</td>
+<td>Amazon</td>
+<td>–</td>
+<td>For breadboard testing</td>
+</tr>
+<tr>
+<td>17</td>
+<td>USB Cable (Micro-B)</td>
+<td>Programming &amp; Power</td>
+<td>–</td>
 <td>1</td>
 <td>–</td>
 <td>–</td>
-<td>Standard USB cable</td>
+<td>For Curiosity Nano</td>
 </tr>
 </tbody>
 </table>
 <hr>
-<h2 id="ordering-notes">Ordering Notes</h2>
+<h2 id="system-notes">System Notes</h2>
 <ul>
-<li>Order <strong>1 per breadboard prototype</strong>, <strong>1 per PCB instance</strong>, plus <strong>1–2 extras</strong> for backup.  </li>
-<li>Verify availability and shipping time before submitting order forms.  </li>
-<li>Group items by vendor (Digi-Key, Microchip Direct, Amazon).  </li>
-<li>Use the <a href="https://www.dropbox.com/scl/fi/zhj1hgknkkmxri7umonv2/EGR-3x4-Purchase-Request-2021.xlsx?dl=0">EGR-3x4 Purchase Request Template</a> to complete vendor order sheets.  </li>
-<li>Submit <strong>.xlsx</strong> purchase request via email to <strong>Dr. Kevin Nichols (kwnicho@asu.edu)</strong> and upload your <strong>BOM page PDF + Excel form</strong> to Canvas.</li>
+<li>Power Input: 9 V DC via barrel jack → LM7805 → +5 V rail.  </li>
+<li>Logic Level: 3.3 V I/O (compatible with Curiosity Nano).  </li>
+<li>Inter-Board Connection: 8-pin ribbon standard (+5 V, GND, signals).  </li>
+<li>Safety: 1 A fuse + decoupling capacitors at each subsystem.  </li>
 </ul>
 <hr>
-<h2 id="design-reference">Design Reference</h2>
-<ul>
-<li><strong>Microcontroller:</strong> <a href="https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/UserGuides/PIC18F57Q43-Curiosity-Nano-HW-UserGuide-DS40002186B.pdf">PIC18F57Q43 Curiosity Nano User Guide</a>  </li>
-<li><strong>Subsystem Architecture:</strong> Hub-and-Spoke system (Caleb = Hub)  </li>
-<li><strong>Power Input:</strong> 9V Barrel Jack → 5V Regulator → PIC 3.3V Logic  </li>
-</ul>
+<h2 id="order-submission-instructions">Order Submission Instructions</h2>
+<ol>
+<li>Group parts by vendor (Digi-Key, Microchip, DFRobot, etc.).  </li>
+<li>Fill out the <a href="https://www.dropbox.com/scl/fi/zhj1hgknkkmxri7umonv2/EGR-3x4-Purchase-Request-2021.xlsx?dl=0">EGR-3x4 Purchase Request Form</a>.  </li>
+<li>Email your .xlsx file to <strong>Dr. Kevin Nichols (kwnicho@asu.edu)</strong> for approval.  </li>
+<li>Submit to Canvas along with this Markdown page exported as PDF.  </li>
+</ol>
 <hr>
+<p><em>Last Updated: October 30, 2025</em><br>
+<em>Author: Caleb Yuen — Hub Subsystem (Master Controller)</em></p>
 
 
 
