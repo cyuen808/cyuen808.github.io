@@ -603,18 +603,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bill-of-materials-example-as-table" class="md-nav__link">
+  <a href="#bill-of-materials" class="md-nav__link">
     <span class="md-ellipsis">
-      Bill of Materials Example (as Table)
+      Bill of Materials
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bill-of-materials-example-as-image" class="md-nav__link">
+  <a href="#ordering-notes" class="md-nav__link">
     <span class="md-ellipsis">
-      Bill of Materials Example (as Image)
+      ⚙️ Ordering Notes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Design Reference
     </span>
   </a>
   
@@ -818,18 +827,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bill-of-materials-example-as-table" class="md-nav__link">
+  <a href="#bill-of-materials" class="md-nav__link">
     <span class="md-ellipsis">
-      Bill of Materials Example (as Table)
+      Bill of Materials
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bill-of-materials-example-as-image" class="md-nav__link">
+  <a href="#ordering-notes" class="md-nav__link">
     <span class="md-ellipsis">
-      Bill of Materials Example (as Image)
+      ⚙️ Ordering Notes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Design Reference
     </span>
   </a>
   
@@ -862,55 +880,160 @@
 
 <h2 id="overview">Overview</h2>
 <p>written context</p>
-<h2 id="bill-of-materials-example-as-table">Bill of Materials Example (as Table)</h2>
-<p><em>Table ##: An example of one approach to adding your BOM table to this section.</em></p>
+<h2 id="bill-of-materials">Bill of Materials</h2>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;"><strong>Part Name/Description</strong></th>
-<th style="text-align: left;"><strong>Qty</strong></th>
-<th style="text-align: left;"><strong>Unit Cost</strong></th>
-<th style="text-align: left;"><strong>Total Cost</strong></th>
-<th style="text-align: left;"><strong>Manufacture</strong></th>
-<th style="text-align: left;"><strong>Manufacturer #</strong></th>
-<th style="text-align: left;"><strong>Vendor Link</strong></th>
-<th style="text-align: left;"><strong>Datasheet Link</strong></th>
-<th style="text-align: left;"><strong>Schematic Reference Designators</strong></th>
+<th>Item</th>
+<th>Component</th>
+<th>Description</th>
+<th>Example Part / Value</th>
+<th>Quantity</th>
+<th>Vendor</th>
+<th>Vendor Link</th>
+<th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">8-bit SIPO/SISO Shift Register, SOIC-16 package</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">$0.49</td>
-<td style="text-align: left;">$ 0.49</td>
-<td style="text-align: left;">NXP</td>
-<td style="text-align: left;">74HC595D,112</td>
-<td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/nexperia-usa-inc/74HC595D-112/763550">DigiKey</a></td>
-<td style="text-align: left;"><a href="https://assets.nexperia.com/documents/data-sheet/74HC_HCT595.pdf">datasheet link</a></td>
-<td style="text-align: left;">U1</td>
+<td>1</td>
+<td>PIC18F57Q43 Curiosity Nano</td>
+<td>Main MCU Board</td>
+<td>DM164150</td>
+<td>1</td>
+<td>Microchip / Digi-Key</td>
+<td><a href="https://www.microchipdirect.com/">Microchip Direct</a></td>
+<td>Master controller for entire system</td>
 </tr>
 <tr>
-<td style="text-align: left;">0.1 µF Ceramic Capacitor, +/-10%, X7R, 50V, 0805 package</td>
-<td style="text-align: left;">10</td>
-<td style="text-align: left;">0.2750</td>
-<td style="text-align: left;">$2.75</td>
-<td style="text-align: left;">KEMET</td>
-<td style="text-align: left;">C0805F104K5RACTU</td>
-<td style="text-align: left;">PRLTA 109</td>
-<td style="text-align: left;">n/a</td>
-<td style="text-align: left;">C2, C4, C6, C7, C8, C9, C10, C11, C12, C16</td>
+<td>2</td>
+<td>8-Pin Ribbon Connector</td>
+<td>Hub-to-spoke communication</td>
+<td>3M 89109-0081</td>
+<td>2</td>
+<td>Digi-Key</td>
+<td><a href="https://www.digikey.com/en/products/detail/3m/89109-0081">Digi-Key</a></td>
+<td>Used to connect subsystems</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Male Header (2×4)</td>
+<td>Ribbon cable interface</td>
+<td>M80-6100842</td>
+<td>2</td>
+<td>Digi-Key</td>
+<td><a href="https://www.digikey.com/en/products/detail/harwin/M80-6100842">Digi-Key</a></td>
+<td>Connects Hub to ribbon cable</td>
+</tr>
+<tr>
+<td>4</td>
+<td>N-MOSFET</td>
+<td>Lamp driver transistor</td>
+<td>IRLZ44N / AO3400A</td>
+<td>2</td>
+<td>Digi-Key</td>
+<td><a href="https://www.digikey.com/en/products/detail/IRLZ44N">Digi-Key</a></td>
+<td>Controls high-current lamp</td>
+</tr>
+<tr>
+<td>5</td>
+<td>LED (RA2)</td>
+<td>Indicator LED</td>
+<td>3mm Red LED</td>
+<td>2</td>
+<td>Digi-Key</td>
+<td><a href="https://www.digikey.com/en/products/filter/leds-discrete">Digi-Key</a></td>
+<td>Status indicator</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Resistor</td>
+<td>For LED current limiting</td>
+<td>330 Ω (¼W)</td>
+<td>3</td>
+<td>Digi-Key</td>
+<td><a href="https://www.digikey.com/en/products/filter/resistors-fixed">Digi-Key</a></td>
+<td>Limits LED current</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Barrel Jack Connector</td>
+<td>Power input</td>
+<td>PJ-002AH</td>
+<td>1</td>
+<td>Digi-Key</td>
+<td><a href="https://www.digikey.com/en/products/detail/cui-devices/PJ-002AH">Digi-Key</a></td>
+<td>Power jack for 9V input</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Voltage Regulator</td>
+<td>9V → 5V conversion</td>
+<td>LM7805 / AMS1117-5.0</td>
+<td>2</td>
+<td>Digi-Key</td>
+<td><a href="https://www.digikey.com/en/products/detail/texas-instruments/LM7805CT">Digi-Key</a></td>
+<td>Provides stable 5V rail</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Capacitor</td>
+<td>Power decoupling</td>
+<td>0.1 µF + 10 µF</td>
+<td>4</td>
+<td>Digi-Key</td>
+<td><a href="https://www.digikey.com/en/products/filter/ceramic-capacitors">Digi-Key</a></td>
+<td>Noise filtering for MCU and regulator</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Jumper Pins / Test Points</td>
+<td>Debug and testing</td>
+<td>TP001</td>
+<td>4</td>
+<td>Digi-Key</td>
+<td><a href="https://www.digikey.com/en/products/detail/keystone-electronics/5019">Digi-Key</a></td>
+<td>Used for debugging / voltage checks</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Breadboard + Dupont Wires</td>
+<td>Prototyping hardware</td>
+<td>–</td>
+<td>1 set</td>
+<td>Amazon</td>
+<td><a href="https://www.amazon.com/">Amazon</a></td>
+<td>For circuit breadboard testing</td>
+</tr>
+<tr>
+<td>12</td>
+<td>USB Cable</td>
+<td>For Nano power &amp; programming</td>
+<td>USB Micro-B</td>
+<td>1</td>
+<td>–</td>
+<td>–</td>
+<td>Standard USB cable</td>
 </tr>
 </tbody>
 </table>
-<p>Note: Setting it up as a table is nice because it is completely viewable without scaling issues. <ins>Downside</ins> is that you have to do the math.</p>
+<hr>
+<h2 id="ordering-notes">⚙️ Ordering Notes</h2>
 <ul>
-<li>You could also import your BOM via a screenshot of the spreadsheet created BOM</li>
+<li>Order <strong>1 per breadboard prototype</strong>, <strong>1 per PCB instance</strong>, plus <strong>1–2 extras</strong> for backup.  </li>
+<li>Verify availability and shipping time before submitting order forms.  </li>
+<li>Group items by vendor (Digi-Key, Microchip Direct, Amazon).  </li>
+<li>Use the <a href="https://www.dropbox.com/scl/fi/zhj1hgknkkmxri7umonv2/EGR-3x4-Purchase-Request-2021.xlsx?dl=0">EGR-3x4 Purchase Request Template</a> to complete vendor order sheets.  </li>
+<li>Submit <strong>.xlsx</strong> purchase request via email to <strong>Dr. Kevin Nichols (kwnicho@asu.edu)</strong> and upload your <strong>BOM page PDF + Excel form</strong> to Canvas.</li>
 </ul>
-<h2 id="bill-of-materials-example-as-image">Bill of Materials Example (as Image)</h2>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../BOM-Screenshot.png" data-desc-position="bottom"><img _2000_="&quot;2000&quot;" alt="" src="../BOM-Screenshot.png" style="style" width:="width:"></a>
-<strong>Figure 2:</strong> Example Bill of Materials as a screenshot.</p>
-<p>As you can see, the text can be difficult to read without opening the image.</p>
+<hr>
+<h2 id="design-reference">🧠 Design Reference</h2>
+<ul>
+<li><strong>Microcontroller:</strong> <a href="https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/UserGuides/PIC18F57Q43-Curiosity-Nano-HW-UserGuide-DS40002186B.pdf">PIC18F57Q43 Curiosity Nano User Guide</a>  </li>
+<li><strong>Subsystem Architecture:</strong> Hub-and-Spoke system (Caleb = Hub)  </li>
+<li><strong>Power Input:</strong> 9V Barrel Jack → 5V Regulator → PIC 3.3V Logic  </li>
+</ul>
+<hr>
 
 
 
