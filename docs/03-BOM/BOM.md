@@ -28,8 +28,8 @@ The hub interfaces with the Filter Board and Sensor Front-End using an 8-pin rib
 | 10 | R3 | 1 kΩ | LED current-limit | 1 | Digi-Key | CF14JT1K00 | RA2 status LED (Provided by Peralta) |
 | 11 | R4 | 10 kΩ | Standby pull-down (TB6612FNG) | 1 | Digi-Key | CF14JT10K0 | Motor STBY control (Provided by Peralta) |
 | 12 | C2, C4, C6, C7 | 0.1 µF | Decoupling capacitors | 4 | Digi-Key | CL21B104KBCNNNC | Noise suppression (Provided by Peralta) |
-| 13 | C3 | 33 µF Electrolytic | Regulator input filter | 1 | Digi-Key | [EEU-FR1V330] (https://www.digikey.com/en/products/detail/panasonic-electronic-components/EEU-FR1V330/2433568) | Power stability |
-| 14 | C5 | 47 µF Electrolytic | Regulator output filter | 1 | Digi-Key | [EEU-FR1V470] (https://www.digikey.com/en/products/detail/panasonic-electronic-components/EEU-FR1H470/9921029?gclsrc=aw.ds&gad_source=1&gad_campaignid=17922795960&gbraid=0AAAAADrbLlj2h-acRt6FR1rtV1C0-9vJ5&gclid=Cj0KCQjwmYzIBhC6ARIsAHA3IkRSNUjJ9bi6Rt_rW5wY0YCjNidS_U1EfIxTJpT5dkVRykROFs4YhKUaAp1HEALw_wcB) | Output smoothing |
+| 13 | C3 | 33 µF Electrolytic | Regulator input filter | 1 | Digi-Key | [EEU-FR1V330](https://www.digikey.com/en/products/detail/panasonic-electronic-components/EEU-FR1V330/2433568) | Power stability |
+| 14 | C5 | 47 µF Electrolytic | Regulator output filter | 1 | Digi-Key | [EEU-FR1V470](https://www.digikey.com/en/products/detail/panasonic-electronic-components/EEU-FR1H470/9921029?gclsrc=aw.ds&gad_source=1&gad_campaignid=17922795960&gbraid=0AAAAADrbLlj2h-acRt6FR1rtV1C0-9vJ5&gclid=Cj0KCQjwmYzIBhC6ARIsAHA3IkRSNUjJ9bi6Rt_rW5wY0YCjNidS_U1EfIxTJpT5dkVRykROFs4YhKUaAp1HEALw_wcB) | Output smoothing |
 | 15 | D1 | LED (Red 3 mm) | Indicator LED | 1 | Digi-Key | WP710A10ID | RA2 status indicator (Provided by Peralta) |
 | 16 | Breadboard / Jumper Wires | Prototyping accessory | – | 1 set | Peralta | – | For breadboard testing (Provided by Peralta) |
 | 17 | USB Cable (Micro-B) | Programming & Power | – | 1 | Peralta | – | For Curiosity Nano |
