@@ -31,7 +31,7 @@ The Hub uses the **PIC18F57Q43 Curiosity Nano** as its core microcontroller and 
 
 ---
 
-## ⚙️ Ordering Notes
+## Ordering Notes
 
 - Order **1 per breadboard prototype**, **1 per PCB instance**, plus **1–2 extras** for backup.  
 - Verify availability and shipping time before submitting order forms.  
@@ -41,7 +41,7 @@ The Hub uses the **PIC18F57Q43 Curiosity Nano** as its core microcontroller and 
 
 ---
 
-## 🧠 Design Reference
+## Design Reference
 
 - **Microcontroller:** [PIC18F57Q43 Curiosity Nano User Guide](https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/UserGuides/PIC18F57Q43-Curiosity-Nano-HW-UserGuide-DS40002186B.pdf)  
 - **Subsystem Architecture:** Hub-and-Spoke system (Caleb = Hub)  
