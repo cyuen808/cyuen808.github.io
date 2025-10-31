@@ -4,7 +4,9 @@ title: Schematic
 
 ## Overview
 
-This schematic shows my PIC18F57Q43 Curiosity Nano controlling a TB6612FNG motor-driver circuit with a 6 V metal gearmotor (FIT0495A). It includes a 9V → 5 V LM7805 regulator, fuse protection, 3.3 V logic interface, and all system connections defined in our team block diagram.
+This schematic shows the PIC18F57Q43 Curiosity Nano as the central controller for the ClapSense hub. It interfaces with three external subsystems — Filter Board, Audio Front-End, and Sensor Front-End — using 8-pin ribbon connectors.
+
+The design includes a 9 V → 5 V LM7805 voltage regulator with fuse protection, a TB6612FNG motor driver for the actuator, and a 3.3 V logic interface between all boards. All power and signal connections align with the team block diagram and system design.
 
 
 
@@ -17,9 +19,10 @@ This schematic shows my PIC18F57Q43 Curiosity Nano controlling a TB6612FNG motor
 
 
 ### Notes  
-- Logic = 3.3 V (VTG from PIC)  
-- Motor rail = 6 V external  
-- Input 9V DC → Fuse → LM7805 → +5 V rail  
-- TB6612FNG internal MOSFET diodes handle motor back-EMF  
+Logic voltage: 3.3 V (from PIC18F57Q43 VTG pin)
+Motor driver supply: 5 V regulated from LM7805
+Input: 9 V DC via barrel jack → Fuse → LM7805 → +5V_SYS rail
+Outputs: +5V_SYS shared with all subsystems through 8-pin connectors
+TB6612FNG handles motor drive and back-EMF internally
+All grounds (GND) are shared across every subsystem
 
-_Last updated on 2025-10-18_
