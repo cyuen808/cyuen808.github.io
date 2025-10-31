@@ -33,6 +33,8 @@ The hub interfaces with the Filter Board and Sensor Front-End using an 8-pin rib
 | 15 | D1 | LED (Red 3 mm) | Indicator LED | 1 | Digi-Key | WP710A10ID | RA2 status indicator (Provided by Peralta) |
 | 16 | Breadboard / Jumper Wires | Prototyping accessory | – | 1 set | Peralta | – | For breadboard testing (Provided by Peralta) |
 | 17 | USB Cable (Micro-B) | Programming & Power | – | 1 | Peralta | – | For Curiosity Nano |
+| 18 | J2, J3, J5 | 8-Pin IDC Ribbon Cable | Standard 8-conductor ribbon cable with connectors attached (2×4 pin) | 3 | Peralta | – | Cable that connects Hub ↔ Filter ↔ Sensors |
+
 
 ---
 
