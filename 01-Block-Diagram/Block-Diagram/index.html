@@ -865,16 +865,17 @@
 <h2 id="overview">Overview</h2>
 <p>This page describes the hardware layout of my subsystem (Hub) for the team clap-activated light project. The Master Controller (PIC18F57Q43 Curiosity Nano) processes sensor data from the Audio, Filter, and Sensor Front-End boards, then drives the actuator to control the lamp output. The design uses an 8-pin ribbon-cable standard for consistent power and signal connections across all subsystems.</p>
 <h2 id="block-diagram">Block Diagram</h2>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../HubController.png" data-desc-position="bottom"><img alt="Caleb Yuen: Master Controller (Hub) " src="../HubController.png"></a>
-<strong>Microcontroller:</strong> Microchip PIC18F57Q43 Curiosity Nano  </p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../egr304-team204-block-diagram-hub.jpg" data-desc-position="bottom"><img alt="Caleb Yuen: Master Controller (Hub) " src="../egr304-team204-block-diagram-hub.jpg"></a></p>
+<p><strong>Microcontroller:</strong> Microchip PIC18F57Q43 Curiosity Nano  </p>
 <p><strong>Inputs:</strong>
-- Clap signal (from Audio board)
-- Filter signal (from Filter board)
-- Lamp toggle (from Filter board)</p>
+- CLAP_IN from Audio Board<br>
+- FILTER_SIGNAL_IN  from Light Detector Board<br>
+- FILTER_TOGGLE from Light Detector Board  </p>
 <p><strong>Outputs:</strong>
-- Status LED (to Filter board)
-- Heartbeat LED (on Hub)
-- Actuator control to Sensor Front-End: <code>PWM_MOTOR</code>, <code>MOTOR_IN1</code>, <code>MOTOR_IN2</code>, <code>MOTOR_STBY</code></p>
+- FILTER_STATUS_LED to Filter/Light Detector Board<br>
+- PWM_MOTOR to Distance Front-End<br>
+- MOTOR_IN1, MOTOR_IN2, MOTOR_STBY to Distance Front-End<br>
+- Heartbeat LED on Hub board  </p>
 <p><strong>Communication:</strong> Discrete GPIO over ribbon; no I²C in Rev 1.<br>
 <strong>Power:</strong> 9 V DC in → 5 V (LM7805) → 3.3 V logic; common GND shared across all boards.</p>
 <hr>
@@ -899,7 +900,7 @@
 <td>—</td>
 <td>—</td>
 <td>0 V</td>
-<td>Common ground across all subsystems</td>
+<td>Common ground shared across all subsystems</td>
 </tr>
 <tr>
 <td>2</td>
@@ -908,41 +909,41 @@
 <td>Power → All Boards</td>
 <td>—</td>
 <td>5 V</td>
-<td>Regulated output from LM7805</td>
+<td>Regulated output from LM7805 (VM → 5 V)</td>
 </tr>
 <tr>
 <td>3</td>
 <td>CLAP_IN</td>
 <td>Input</td>
-<td>Audio → Hub</td>
-<td>(assign pin)</td>
+<td>Audio Board → Hub</td>
+<td>RB0</td>
 <td>3.3 V (via divider)</td>
-<td>Clap detection digital signal</td>
+<td>Digital clap detection signal</td>
 </tr>
 <tr>
 <td>4</td>
 <td>FILTER_SIGNAL_IN</td>
 <td>Input</td>
-<td>Filter → Hub</td>
-<td>(assign pin)</td>
+<td>Light Detector → Hub</td>
+<td>RA0</td>
 <td>3.3 V (via divider)</td>
-<td>Filtered/threshold logic</td>
+<td>Filtered threshold logic</td>
 </tr>
 <tr>
 <td>5</td>
 <td>FILTER_TOGGLE</td>
 <td>Input</td>
-<td>Filter → Hub</td>
-<td>(assign pin)</td>
+<td>Light Detector → Hub</td>
+<td>RB1</td>
 <td>3.3 V (via divider)</td>
-<td>Lamp toggle control</td>
+<td>Lamp toggle command</td>
 </tr>
 <tr>
 <td>6</td>
 <td>FILTER_STATUS_LED</td>
 <td>Output</td>
-<td>Hub → Filter</td>
-<td>(assign pin)</td>
+<td>Hub → Light Detector Board</td>
+<td>RA2</td>
 <td>3.3 V</td>
 <td>Status indicator LED</td>
 </tr>
@@ -950,37 +951,37 @@
 <td>7</td>
 <td>PWM_MOTOR</td>
 <td>Output (PWM)</td>
-<td>Hub → Sensor Front-End</td>
-<td>(assign pin)</td>
+<td>Hub → Distance Front-End</td>
+<td>RB2 (PWM1)</td>
 <td>3.3 V</td>
-<td>Dimming / speed control</td>
+<td>PWM control for motor/actuator</td>
 </tr>
 <tr>
 <td>8</td>
 <td>MOTOR_STBY</td>
 <td>Output</td>
-<td>Hub → Sensor Front-End</td>
-<td>(assign pin)</td>
+<td>Hub → Distance Front-End</td>
+<td>RA5</td>
 <td>3.3 V</td>
-<td>Enables actuator driver</td>
+<td>Enables H-Bridge (FAN8100N)</td>
 </tr>
 <tr>
 <td>9</td>
 <td>MOTOR_IN1</td>
 <td>Output</td>
-<td>Hub → Sensor Front-End</td>
-<td>(assign pin)</td>
+<td>Hub → Distance Front-End</td>
+<td>RB3</td>
 <td>3.3 V</td>
-<td>Direction control A</td>
+<td>Motor direction A</td>
 </tr>
 <tr>
 <td>10</td>
 <td>MOTOR_IN2</td>
 <td>Output</td>
-<td>Hub → Sensor Front-End</td>
-<td>(assign pin)</td>
+<td>Hub → Distance Front-End</td>
+<td>RB4</td>
 <td>3.3 V</td>
-<td>Direction control B</td>
+<td>Motor direction B</td>
 </tr>
 <tr>
 <td>11</td>
@@ -995,19 +996,19 @@
 <td>12</td>
 <td>UART_RX_FILTER</td>
 <td>Input (optional)</td>
-<td>Filter → Hub (Debug)</td>
-<td>(assign pin)</td>
+<td>Light Detector → Hub (Debug)</td>
+<td>RC7 (RX)</td>
 <td>3.3 V</td>
-<td>Serial receive for Filter board</td>
+<td>Serial receive for debug</td>
 </tr>
 <tr>
 <td>13</td>
 <td>UART_TX_FILTER</td>
 <td>Output (optional)</td>
-<td>Hub → Filter (Debug)</td>
-<td>(assign pin)</td>
+<td>Hub → Light Detector (Debug)</td>
+<td>RC6 (TX)</td>
 <td>3.3 V</td>
-<td>Serial transmit to Filter board</td>
+<td>Serial transmit for debug</td>
 </tr>
 <tr>
 <td>14</td>
@@ -1016,15 +1017,19 @@
 <td>—</td>
 <td>—</td>
 <td>—</td>
-<td>Reserved for future use</td>
+<td>Reserved for future expansion</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Notes:</strong>
-- All PIC18F57Q43 logic operates at 3.3 V.<br>
-- External 5 V signals are stepped down using 10 kΩ / 20 kΩ resistor dividers.<br>
-- Only +5V_SYS and GND are shared between boards; interleave GND pins (1 and 11) in the ribbon to minimize noise.<br>
-- UART pins (12–13) are optional for debugging with the Filter board.</p>
+<hr>
+<p><strong>Notes</strong></p>
+<ul>
+<li>All PIC18F57Q43 logic operates at <strong>3.3 V</strong>.  </li>
+<li>External 5 V signals from other boards are stepped down using 10 kΩ / 20 kΩ voltage dividers.  </li>
+<li>Only <strong>+5V_SYS</strong> and <strong>GND</strong> are shared between boards; interleave GND pins (1 and 11) to reduce EMI and noise.  </li>
+<li>UART pins (12–13) are optional for debugging with the Light Detector Board.  </li>
+<li>PWM, IN1, IN2, and STBY connect to the FAN8100N H-Bridge on the Distance Front-End to drive the DFRobot 6 V metal gear motor.</li>
+</ul>
 
 
 
