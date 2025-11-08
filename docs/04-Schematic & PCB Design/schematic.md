@@ -1,5 +1,5 @@
 ---
-title: Schematic
+title: Schematic & PCB
 ---
 
 ## Overview
@@ -13,9 +13,15 @@ The design includes a 9 V → 5 V LM7805 voltage regulator with fuse protection,
 ### Schematic Preview  
 ![C_Yuen_Hub_Schematic](C_Yuen_Hub_Schematic.png)
 
+### PCB Preview  
+![C_Yuen_Hub_PCB](C_Yuen_Hub_PCB.png)
+
 ### Downloads  
 - [View full PDF schematic](C_Yuen_Hub_Schematic.pdf)  
 - [Download KiCad project ZIP](C_Yuen_Hub_Project.zip)
+- [Download PCB Gerber Files project ZIP](C_Yuen_Hub_GerberFiles.zip)
+
+
 
 
 ### Notes  
