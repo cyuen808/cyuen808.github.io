@@ -7,8 +7,13 @@ tags:
 
 # Bill of Materials – ClapSense Hub (Master Controller)
 
-This Bill of Materials (BOM) lists all components used in the Hub Subsystem (Master Controller) for the ClapSense project.  
-The hub interfaces with the Filter Board and Sensor Front-End using an 8-pin ribbon connector and drives the lamp actuator through the TB6612FNG motor driver.
+This Bill of Materials (BOM) lists all components used in the Hub subsystem (Master Controller) for the ClapSense project.  
+The Hub interfaces with the Audio Front-End, Light Detector Board, and Distance Front-End through 8-pin ribbon connectors and drives the lamp actuator using the FAN8100N H-Bridge motor driver.
+
+
+
+
+
 
 ---
 
