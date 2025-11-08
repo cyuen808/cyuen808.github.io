@@ -517,12 +517,54 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Block Diagram">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#power-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Power Path
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Inputs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Outputs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actuator-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Actuator Path
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#pin-assignment-table" class="md-nav__link">
+  <a href="#notes" class="md-nav__link">
     <span class="md-ellipsis">
-      Pin Assignment Table
+      Notes
     </span>
   </a>
   
@@ -824,12 +866,54 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Block Diagram">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#power-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Power Path
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Inputs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Outputs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actuator-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Actuator Path
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#pin-assignment-table" class="md-nav__link">
+  <a href="#notes" class="md-nav__link">
     <span class="md-ellipsis">
-      Pin Assignment Table
+      Notes
     </span>
   </a>
   
@@ -867,168 +951,108 @@
 <h2 id="block-diagram">Block Diagram</h2>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../egr304-team204-block-diagram-hub.jpg" data-desc-position="bottom"><img alt="Caleb Yuen: Master Controller (Hub) " src="../egr304-team204-block-diagram-hub.jpg"></a></p>
 <p><strong>Microcontroller:</strong> Microchip PIC18F57Q43 Curiosity Nano  </p>
-<p><strong>Inputs:</strong>
-- CLAP_IN from Audio Board<br>
-- FILTER_SIGNAL_IN  from Light Detector Board<br>
-- FILTER_TOGGLE from Light Detector Board  </p>
-<p><strong>Outputs:</strong>
-- FILTER_STATUS_LED to Filter/Light Detector Board<br>
-- PWM_MOTOR to Distance Front-End<br>
-- MOTOR_IN1, MOTOR_IN2, MOTOR_STBY to Distance Front-End<br>
-- Heartbeat LED on Hub board  </p>
-<p><strong>Communication:</strong> Discrete GPIO over ribbon; no I²C in Rev 1.<br>
-<strong>Power:</strong> 9 V DC in → 5 V (LM7805) → 3.3 V logic; common GND shared across all boards.</p>
-<hr>
-<h2 id="pin-assignment-table">Pin Assignment Table</h2>
+<h3 id="power-path">🔹 Power Path</h3>
+<p>9 V DC input → LM7805 Regulator → 5 V system rail (+5_SYS)<br>
+All logic runs at 3.3 V internally on the PIC.</p>
+<h3 id="inputs">🔹 Inputs</h3>
 <table>
 <thead>
 <tr>
-<th>Pin</th>
+<th>Source</th>
 <th>Signal</th>
-<th>Direction</th>
-<th>Source → Destination</th>
-<th>MCU Pin (PIC18F57Q43)</th>
-<th>Voltage</th>
-<th>Notes</th>
+<th>MCU Pin</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>1</td>
-<td>GND</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>0 V</td>
-<td>Common ground shared across all subsystems</td>
-</tr>
-<tr>
-<td>2</td>
-<td>+5V_SYS</td>
-<td>—</td>
-<td>Power → All Boards</td>
-<td>—</td>
-<td>5 V</td>
-<td>Regulated output from LM7805 (VM → 5 V)</td>
-</tr>
-<tr>
-<td>3</td>
-<td>CLAP_IN</td>
-<td>Input</td>
-<td>Audio Board → Hub</td>
-<td>RB0</td>
-<td>3.3 V (via divider)</td>
-<td>Digital clap detection signal</td>
-</tr>
-<tr>
-<td>4</td>
-<td>FILTER_SIGNAL_IN</td>
-<td>Input</td>
-<td>Light Detector → Hub</td>
+<td>Audio Board</td>
+<td>RA0_Clap_Signal</td>
 <td>RA0</td>
-<td>3.3 V (via divider)</td>
-<td>Filtered threshold logic</td>
+<td>Digital In</td>
+<td>Detects clap events from Audio Front-End</td>
 </tr>
 <tr>
-<td>5</td>
-<td>FILTER_TOGGLE</td>
-<td>Input</td>
-<td>Light Detector → Hub</td>
+<td>Light Detector Board</td>
+<td>RA4_LightOutput</td>
+<td>RA4</td>
+<td>Digital In</td>
+<td>Reads filtered light threshold signal</td>
+</tr>
+<tr>
+<td>Light Detector Board</td>
+<td>RB1_FilterToggle</td>
 <td>RB1</td>
-<td>3.3 V (via divider)</td>
-<td>Lamp toggle command</td>
+<td>Digital In</td>
+<td>Toggles lamp state</td>
 </tr>
 <tr>
-<td>6</td>
-<td>FILTER_STATUS_LED</td>
-<td>Output</td>
-<td>Hub → Light Detector Board</td>
-<td>RA2</td>
-<td>3.3 V</td>
-<td>Status indicator LED</td>
+<td>Distance Front-End</td>
+<td>RA3_DIST_ADC</td>
+<td>RA3</td>
+<td>Analog In</td>
+<td>Reads distance sensor feedback</td>
 </tr>
 <tr>
-<td>7</td>
-<td>PWM_MOTOR</td>
-<td>Output (PWM)</td>
-<td>Hub → Distance Front-End</td>
-<td>RB2 (PWM1)</td>
-<td>3.3 V</td>
-<td>PWM control for motor/actuator</td>
-</tr>
-<tr>
-<td>8</td>
-<td>MOTOR_STBY</td>
-<td>Output</td>
-<td>Hub → Distance Front-End</td>
+<td>General</td>
+<td>RA5_Analog/A-D</td>
 <td>RA5</td>
-<td>3.3 V</td>
-<td>Enables H-Bridge (FAN8100N)</td>
-</tr>
-<tr>
-<td>9</td>
-<td>MOTOR_IN1</td>
-<td>Output</td>
-<td>Hub → Distance Front-End</td>
-<td>RB3</td>
-<td>3.3 V</td>
-<td>Motor direction A</td>
-</tr>
-<tr>
-<td>10</td>
-<td>MOTOR_IN2</td>
-<td>Output</td>
-<td>Hub → Distance Front-End</td>
-<td>RB4</td>
-<td>3.3 V</td>
-<td>Motor direction B</td>
-</tr>
-<tr>
-<td>11</td>
-<td>GND</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>0 V</td>
-<td>Interleaved ground for noise reduction</td>
-</tr>
-<tr>
-<td>12</td>
-<td>UART_RX_FILTER</td>
-<td>Input (optional)</td>
-<td>Light Detector → Hub (Debug)</td>
-<td>RC7 (RX)</td>
-<td>3.3 V</td>
-<td>Serial receive for debug</td>
-</tr>
-<tr>
-<td>13</td>
-<td>UART_TX_FILTER</td>
-<td>Output (optional)</td>
-<td>Hub → Light Detector (Debug)</td>
-<td>RC6 (TX)</td>
-<td>3.3 V</td>
-<td>Serial transmit for debug</td>
-</tr>
-<tr>
-<td>14</td>
-<td>SPARE</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>Reserved for future expansion</td>
+<td>Analog In</td>
+<td>Auxiliary analog line for testing or filter signal</td>
 </tr>
 </tbody>
 </table>
+<h3 id="outputs">🔹 Outputs</h3>
+<table>
+<thead>
+<tr>
+<th>Destination</th>
+<th>Signal</th>
+<th>MCU Pin</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Light Detector Board</td>
+<td>RB2_STATUS_LED</td>
+<td>RB2</td>
+<td>Digital Out</td>
+<td>LED feedback to Filter Board</td>
+</tr>
+<tr>
+<td>Distance Front-End (H-Bridge)</td>
+<td>RB0_PWM_A / RB1_PWM_B</td>
+<td>RB0 / RB1</td>
+<td>PWM Out</td>
+<td>Controls motor speed and direction</td>
+</tr>
+<tr>
+<td>Distance Front-End (H-Bridge)</td>
+<td>RA5 (Motor STBY)</td>
+<td>RA5</td>
+<td>Digital Out</td>
+<td>Enables motor driver</td>
+</tr>
+<tr>
+<td>Onboard</td>
+<td>D1 (Red LED)</td>
+<td>RA2</td>
+<td>Digital Out</td>
+<td>Hub status indicator</td>
+</tr>
+</tbody>
+</table>
+<h3 id="actuator-path">🔹 Actuator Path</h3>
+<p>FAN8100N H-Bridge receives PWM inputs from RB0 &amp; RB1 and drives the DFRobot FIT0441 6 V motor.<br>
+Power pins PVC CA/B are fed by +5_SYS and controlled through the PIC enable pin RA5.</p>
 <hr>
-<p><strong>Notes</strong></p>
+<h2 id="notes">Notes</h2>
 <ul>
-<li>All PIC18F57Q43 logic operates at <strong>3.3 V</strong>.  </li>
-<li>External 5 V signals from other boards are stepped down using 10 kΩ / 20 kΩ voltage dividers.  </li>
-<li>Only <strong>+5V_SYS</strong> and <strong>GND</strong> are shared between boards; interleave GND pins (1 and 11) to reduce EMI and noise.  </li>
-<li>UART pins (12–13) are optional for debugging with the Light Detector Board.  </li>
-<li>PWM, IN1, IN2, and STBY connect to the FAN8100N H-Bridge on the Distance Front-End to drive the DFRobot 6 V metal gear motor.</li>
+<li>Inter-board ribbon connectors use shared GND and +5_SYS.  </li>
+<li>Voltage dividers (10 kΩ / 20 kΩ) are used on incoming 5 V signals to protect 3.3 V PIC inputs.  </li>
 </ul>
 
 
