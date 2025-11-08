@@ -18,28 +18,27 @@ This page describes the hardware layout of my subsystem (Hub) for the team clap-
 
 **Microcontroller:** Microchip PIC18F57Q43 Curiosity Nano  
 
-### 🔹 Power Path
+### Power Path
 9 V DC input → LM7805 Regulator → 5 V system rail (+5_SYS)  
 All logic runs at 3.3 V internally on the PIC.
 
-### 🔹 Inputs
+### Inputs
 | Source | Signal | MCU Pin | Type | Description |
 |---------|---------|----------|-------|-------------|
+| Light Detector Board | RA1_LightOutput | RA1 | Digital In | Reads filtered light threshold signal |
 | Audio Board | RA0_Clap_Signal | RA0 | Digital In | Detects clap events from Audio Front-End |
-| Light Detector Board | RA4_LightOutput | RA4 | Digital In | Reads filtered light threshold signal |
-| Light Detector Board | RB1_FilterToggle | RB1 | Digital In | Toggles lamp state |
+| Audio Board  | RA5_Analog/A-D | RA5 | Analog In | Auxiliary analog line for testing or filter signal |
 | Distance Front-End | RA3_DIST_ADC | RA3 | Analog In | Reads distance sensor feedback |
-| General | RA5_Analog/A-D | RA5 | Analog In | Auxiliary analog line for testing or filter signal |
 
-### 🔹 Outputs
+
+### Outputs
 | Destination | Signal | MCU Pin | Type | Description |
 |--------------|---------|----------|-------|-------------|
 | Light Detector Board | RB2_STATUS_LED | RB2 | Digital Out | LED feedback to Filter Board |
-| Distance Front-End (H-Bridge) | RB0_PWM_A / RB1_PWM_B | RB0 / RB1 | PWM Out | Controls motor speed and direction |
-| Distance Front-End (H-Bridge) | RA5 (Motor STBY) | RA5 | Digital Out | Enables motor driver |
+| (H-Bridge) | RB0_PWM_A / RB1_PWM_B | RB0 / RB1 | PWM Out | Controls motor speed and direction |
 | Onboard | D1 (Red LED) | RA2 | Digital Out | Hub status indicator |
 
-### 🔹 Actuator Path
+### Actuator Path
 FAN8100N H-Bridge receives PWM inputs from RB0 & RB1 and drives the DFRobot FIT0441 6 V motor.  
 Power pins PVC CA/B are fed by +5_SYS and controlled through the PIC enable pin RA5.
 
