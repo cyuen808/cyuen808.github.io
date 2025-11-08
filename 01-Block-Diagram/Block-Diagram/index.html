@@ -523,7 +523,7 @@
           <li class="md-nav__item">
   <a href="#power-path" class="md-nav__link">
     <span class="md-ellipsis">
-      🔹 Power Path
+      Power Path
     </span>
   </a>
   
@@ -532,7 +532,7 @@
           <li class="md-nav__item">
   <a href="#inputs" class="md-nav__link">
     <span class="md-ellipsis">
-      🔹 Inputs
+      Inputs
     </span>
   </a>
   
@@ -541,7 +541,7 @@
           <li class="md-nav__item">
   <a href="#outputs" class="md-nav__link">
     <span class="md-ellipsis">
-      🔹 Outputs
+      Outputs
     </span>
   </a>
   
@@ -550,7 +550,7 @@
           <li class="md-nav__item">
   <a href="#actuator-path" class="md-nav__link">
     <span class="md-ellipsis">
-      🔹 Actuator Path
+      Actuator Path
     </span>
   </a>
   
@@ -872,7 +872,7 @@
           <li class="md-nav__item">
   <a href="#power-path" class="md-nav__link">
     <span class="md-ellipsis">
-      🔹 Power Path
+      Power Path
     </span>
   </a>
   
@@ -881,7 +881,7 @@
           <li class="md-nav__item">
   <a href="#inputs" class="md-nav__link">
     <span class="md-ellipsis">
-      🔹 Inputs
+      Inputs
     </span>
   </a>
   
@@ -890,7 +890,7 @@
           <li class="md-nav__item">
   <a href="#outputs" class="md-nav__link">
     <span class="md-ellipsis">
-      🔹 Outputs
+      Outputs
     </span>
   </a>
   
@@ -899,7 +899,7 @@
           <li class="md-nav__item">
   <a href="#actuator-path" class="md-nav__link">
     <span class="md-ellipsis">
-      🔹 Actuator Path
+      Actuator Path
     </span>
   </a>
   
@@ -951,10 +951,10 @@
 <h2 id="block-diagram">Block Diagram</h2>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../egr304-team204-block-diagram-hub.jpg" data-desc-position="bottom"><img alt="Caleb Yuen: Master Controller (Hub) " src="../egr304-team204-block-diagram-hub.jpg"></a></p>
 <p><strong>Microcontroller:</strong> Microchip PIC18F57Q43 Curiosity Nano  </p>
-<h3 id="power-path">🔹 Power Path</h3>
+<h3 id="power-path">Power Path</h3>
 <p>9 V DC input → LM7805 Regulator → 5 V system rail (+5_SYS)<br>
 All logic runs at 3.3 V internally on the PIC.</p>
-<h3 id="inputs">🔹 Inputs</h3>
+<h3 id="inputs">Inputs</h3>
 <table>
 <thead>
 <tr>
@@ -967,6 +967,13 @@ All logic runs at 3.3 V internally on the PIC.</p>
 </thead>
 <tbody>
 <tr>
+<td>Light Detector Board</td>
+<td>RA1_LightOutput</td>
+<td>RA1</td>
+<td>Digital In</td>
+<td>Reads filtered light threshold signal</td>
+</tr>
+<tr>
 <td>Audio Board</td>
 <td>RA0_Clap_Signal</td>
 <td>RA0</td>
@@ -974,18 +981,11 @@ All logic runs at 3.3 V internally on the PIC.</p>
 <td>Detects clap events from Audio Front-End</td>
 </tr>
 <tr>
-<td>Light Detector Board</td>
-<td>RA4_LightOutput</td>
-<td>RA4</td>
-<td>Digital In</td>
-<td>Reads filtered light threshold signal</td>
-</tr>
-<tr>
-<td>Light Detector Board</td>
-<td>RB1_FilterToggle</td>
-<td>RB1</td>
-<td>Digital In</td>
-<td>Toggles lamp state</td>
+<td>Audio Board</td>
+<td>RA5_Analog/A-D</td>
+<td>RA5</td>
+<td>Analog In</td>
+<td>Auxiliary analog line for testing or filter signal</td>
 </tr>
 <tr>
 <td>Distance Front-End</td>
@@ -994,16 +994,9 @@ All logic runs at 3.3 V internally on the PIC.</p>
 <td>Analog In</td>
 <td>Reads distance sensor feedback</td>
 </tr>
-<tr>
-<td>General</td>
-<td>RA5_Analog/A-D</td>
-<td>RA5</td>
-<td>Analog In</td>
-<td>Auxiliary analog line for testing or filter signal</td>
-</tr>
 </tbody>
 </table>
-<h3 id="outputs">🔹 Outputs</h3>
+<h3 id="outputs">Outputs</h3>
 <table>
 <thead>
 <tr>
@@ -1023,18 +1016,11 @@ All logic runs at 3.3 V internally on the PIC.</p>
 <td>LED feedback to Filter Board</td>
 </tr>
 <tr>
-<td>Distance Front-End (H-Bridge)</td>
+<td>(H-Bridge)</td>
 <td>RB0_PWM_A / RB1_PWM_B</td>
 <td>RB0 / RB1</td>
 <td>PWM Out</td>
 <td>Controls motor speed and direction</td>
-</tr>
-<tr>
-<td>Distance Front-End (H-Bridge)</td>
-<td>RA5 (Motor STBY)</td>
-<td>RA5</td>
-<td>Digital Out</td>
-<td>Enables motor driver</td>
 </tr>
 <tr>
 <td>Onboard</td>
@@ -1045,7 +1031,7 @@ All logic runs at 3.3 V internally on the PIC.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="actuator-path">🔹 Actuator Path</h3>
+<h3 id="actuator-path">Actuator Path</h3>
 <p>FAN8100N H-Bridge receives PWM inputs from RB0 &amp; RB1 and drives the DFRobot FIT0441 6 V motor.<br>
 Power pins PVC CA/B are fed by +5_SYS and controlled through the PIC enable pin RA5.</p>
 <hr>
