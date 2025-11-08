@@ -45,9 +45,9 @@ title: Component Selection
     | Includes built-in diodes that protect against voltage spikes when motors switch direction.t | Has a basic control setup (Forward, Reverse, Brake); requires extra PWM programming for smooth speed control.
 
 
-**Choice:** Option 1: Toshiba TB6612FNG
+**Choice:** Option 3: 2156-FAN8100N-FS-ND
 
-**Rationale:** TB6612FNG is the most practical, low-risk driver for a 6–9 V system controlled by a 3.3 V MCU. It gives you reliable bidirectional control, braking, and PWM speed control with simple wiring and strong community support.
+**Rationale:** The FAN8100N was chosen for its reliable 3.3 V logic compatibility, built-in protection features, and sufficient current capacity to safely and efficiently drive our 6 V DC motor within the Hub subsystem.
 
 
 ## **DC Motor Options**
@@ -93,5 +93,5 @@ title: Component Selection
 
 **Choice:** Option 1: DFRobot 6 V Metal Gearmotor (FIT0495-A)
 
-**Rationale:** The DFRobot 6 V metal gearmotor was chosen because its high torque and low speed provide smooth, controlled motion for pressing a button without bouncing or damage. It runs safely on the project’s ≤ 9 V supply, draws less than 1 A, and pairs perfectly with the TB6612FNG driver for simple, reliable actuation.
+**Rationale:** The DFRobot 6 V metal gearmotor was chosen for its high torque and low-speed output, providing smooth, controlled motion for pressing a button without bounce or damage. It operates safely on the project’s ≤ 9 V supply, draws under 1 A, and pairs perfectly with the FAN8100N H-Bridge, ensuring simple, reliable actuation with built-in protection and 3.3 V logic compatibility.
 
