@@ -14,7 +14,7 @@ This page describes the hardware layout of my subsystem (Hub) for the team clap-
 
 
 ## Block Diagram 
-![Caleb Yuen: Master Controller (Hub) ](egr304-team204-block-diagram-hub.jpg)
+![Caleb Yuen - Master Controller (Hub) ](Egr304-team204-block-diagram-hub.jpg)
 
 **Microcontroller:** Microchip PIC18F57Q43 Curiosity Nano  
 
