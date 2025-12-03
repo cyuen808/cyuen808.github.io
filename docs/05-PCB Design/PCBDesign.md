@@ -19,7 +19,7 @@ This page documents the full PCB design process for the ClapSense Hub board. It 
 ![C_Yuen_Hub_FinalPCB](C_Yuen_Hub_FinalPCB.jpg)
 
 **Note**
-- R3, R5 and C5 were decided last minute that my team werent going give the hub analog input
+- R3, R5 and C5 were decided to be removed last minute that my team werent going give the hub analog input
 
 
 ### Downloads  
