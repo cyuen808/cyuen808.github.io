@@ -16,18 +16,16 @@ for<br>
 
 ## Introduction
 
-This datasheet explains the design and setup of my subsystem, the Master Controller (Hub), for Team 204’s ClapSense Smart Light. It shows how my board interfaces with the Audio Front-End, Light Detector Board, and Distance Front-End, and how it controls the actuator system using a FAN8100N H-Bridge to toggle the lamp when a valid clap is detected.  
+This datasheet explains the design and setup of my subsystem, the Master Controller (Hub), for Team 204’s ClapSense Smart Light. It shows how my board interfaces with the Audio Front-End, Light Sensor Board, and Sensor Front-End, and how it controls the actuator system using a FAN8100N H-Bridge to toggle the lamp when a valid clap is detected.  
 
-The goal of this project is to create a smart lighting system that responds only to intentional user input while remaining safe, modular, and easy to set up through a low-voltage 9 V → 5 V → 3.3 V regulated power design.
+The goal of this project is to create a smart lighting system that responds only to intentional user input while remaining safe, modular, and easy to set up through a low-voltage 9 V → 5 V regulated power design.
 
 
 
 
 ### Project Summary
 
-Clapsense is built around a single Microchip PIC18F57Q43 Curiosity Nano that serves as the Master Controller. The Audio Front End detects claps, the ### Project Summary
-
-ClapSense is built around a single Microchip PIC18F57Q43 Curiosity Nano that serves as the Master Controller (Hub). The Audio Front-End detects claps, the Light Detector Board manages user inputs and status LEDs, and the Distance Front-End drives the actuator that physically toggles the lamp.  
+ClapSense is built around a single Microchip PIC18F57Q43 Curiosity Nano that serves as the Master Controller (Hub). The Audio Front-End detects claps, the Light Sensor Board senses outside light to automatically shut off system, and the Sensor Front-End measures ambient light levels for adaptive brightness.  
 
 The Master Controller processes all inputs, filters valid clap patterns, and sends control signals through the FAN8100N H-Bridge to the 6 V DC motor, creating precise and safe actuation.  
 This project integrates key embedded system principles such as signal processing, sensor feedback, power regulation, and actuator control to deliver a reliable, low-voltage, and hands-free smart lighting experience.
@@ -37,9 +35,9 @@ This project integrates key embedded system principles such as signal processing
 
 ### My Contribution
 
-As the Team Lead and Master Controller (Hub) designer for the ClapSense project, Caleb developed the main subsystem that coordinates all communication between the Audio Front-End, Light Detector Board, and Distance Front-End. His board, built around the Microchip PIC18F57Q43 Curiosity Nano, manages signal flow, initialization, and decision-making for the entire system.
+As the Team Lead and Master Controller (Hub) designer for the ClapSense project, Caleb developed the main subsystem that coordinates all communication between the Audio Front-End, Light Sensor Board, and Sensor Front-End.
 
-He designed the schematic and PCB for the Hub circuit, selected and justified key components such as the FAN8100N H-Bridge and DFRobot FIT0495-A DC motor, and documented how the 3.3 V logic, 5 V power regulation, and actuator control integrate safely within the team’s modular 8-pin ribbon interface. 
+I designed the schematic and PCB for the Hub circuit, selected and justified key components such as the FAN8100N H-Bridge and DFRobot FIT0495-A DC motor, and documented how the 5 V logic, 5 V power regulation, and actuator control integrate safely within the team’s modular 8-pin ribbon interface. 
 
 Beyond technical design, he ensured consistent documentation, power and logic standardization across all boards, and led coordination between team members during schematic review, PCB layout, and website integration for Team 204’s final submission.
 
