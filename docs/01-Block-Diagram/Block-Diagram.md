@@ -10,7 +10,7 @@ tags:
 
 
 ## Overview
-This page describes the hardware layout of my subsystem (Hub) for the team clap-activated light project. The Master Controller (PIC18F57Q43 Curiosity Nano) processes sensor data from the Audio, Filter, and Sensor Front-End boards, then drives the actuator to control the lamp output. The design uses an 8-pin ribbon-cable standard for consistent power and signal connections across all subsystems.
+This page describes the hardware layout of my subsystem (Hub) for the team clap-activated light project. The Master Controller (PIC18F57Q43 Curiosity Nano) processes sensor data from the Audio, Light Sensor, and Sensor Front-End boards, then drives the actuator to control the LED output. The design uses an 8-pin ribbon-cable standard for consistent power and signal connections across all subsystems.
 
 
 ## Block Diagram 
@@ -19,22 +19,20 @@ This page describes the hardware layout of my subsystem (Hub) for the team clap-
 **Microcontroller:** Microchip PIC18F57Q43 Curiosity Nano  
 
 ### Power Path
-9 V DC input → LM7805 Regulator → 5 V system rail (+5_SYS)  
-All logic runs at 3.3 V internally on the PIC.
+9 V DC input → LM7805 Regulator → 5 V system rail 
+All logic runs at 5 V internally on the PIC.
 
 ### Inputs
 | Source | Signal | MCU Pin | Type | Description |
 |---------|---------|----------|-------|-------------|
-| Light Detector Board | RA1_LightOutput | RA1 | Digital In | Reads filtered light threshold signal |
+| Light Sensor Board | RA1_LightOutput | RA1 | Digital In | Senses outside light to automatically shut off system |
 | Audio Board | RA0_Clap_Signal | RA0 | Digital In | Detects clap events from Audio Front-End |
-| Audio Board  | RA5_Analog/A-D | RA5 | Analog In | Auxiliary analog line for testing or filter signal |
-| Distance Front-End | RA3_DIST_ADC | RA3 | Analog In | Reads distance sensor feedback |
+| Sensor Front-End | RA3_DIST_ADC | RA3 | Analog In | Measures ambient light levels for adaptive brightness  |
 
 
 ### Outputs
 | Destination | Signal | MCU Pin | Type | Description |
 |--------------|---------|----------|-------|-------------|
-| Light Detector Board | RB2_STATUS_LED | RB2 | Digital Out | LED feedback to Filter Board |
 | (H-Bridge) | RB0_PWM_A / RB1_PWM_B | RB0 / RB1 | PWM Out | Controls motor speed and direction |
 | Onboard | D1 (Red LED) | RA2 | Digital Out | Hub status indicator |
 
