@@ -8,7 +8,7 @@ For now, this page serves as a placeholder with the Power Budget spreadsheet ava
 
 The power budget will later calculate:  
 - Current draw for each component (microcontroller, H-bridge, motor, etc.)  
-- Power rail groupings (3.3 V logic and 6–9 V motor)  
+- Power rail groupings (5 V logic and 6–9 V motor)  
 - Supply margins and thermal headroom  
 
 ## Conclusions
