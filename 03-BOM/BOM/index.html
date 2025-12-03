@@ -925,7 +925,7 @@ The Hub interfaces with the Audio Front-End, Light Detector Board, and Distance 
 <tbody>
 <tr>
 <td>1</td>
-<td>U1</td>
+<td>U2</td>
 <td>PIC18F57Q43-CY</td>
 <td>Microcontroller (40-pin)</td>
 <td>1</td>
@@ -935,17 +935,17 @@ The Hub interfaces with the Audio Front-End, Light Detector Board, and Distance 
 </tr>
 <tr>
 <td>2</td>
-<td>U2</td>
-<td>TB6612FNG</td>
-<td>Dual Motor Driver IC</td>
+<td>U4</td>
+<td>FAN8100N</td>
+<td>Motor Driver Bipolar Parallel 12-DIP</td>
 <td>1</td>
 <td>Digi-Key</td>
-<td><a href="https://www.digikey.com/en/products/detail/toshiba-semiconductor-and-storage/TB6612FNG-C-8-EL/1730070">TB6612FNG</a></td>
-<td>Controls lamp actuator</td>
+<td><a href="https://www.digikey.com/en/products/detail/fairchild-semiconductor/FAN8100N/11558200">FAN8100N</a></td>
+<td>Controls LED actuator</td>
 </tr>
 <tr>
 <td>3</td>
-<td>M2</td>
+<td>M1</td>
 <td>DC Motor</td>
 <td>Actuator (load)</td>
 <td>1</td>
@@ -955,7 +955,7 @@ The Hub interfaces with the Audio Front-End, Light Detector Board, and Distance 
 </tr>
 <tr>
 <td>4</td>
-<td>U3</td>
+<td>U1</td>
 <td>LM7805 TO-220</td>
 <td>Voltage Regulator (9 V → 5 V)</td>
 <td>1</td>
@@ -985,7 +985,7 @@ The Hub interfaces with the Audio Front-End, Light Detector Board, and Distance 
 </tr>
 <tr>
 <td>7</td>
-<td>J2, J3, J5</td>
+<td>J2, J3, J9</td>
 <td>2×4 Header (8-Pin Ribbon)</td>
 <td>Subsystem connectors</td>
 <td>3</td>
@@ -995,7 +995,7 @@ The Hub interfaces with the Audio Front-End, Light Detector Board, and Distance 
 </tr>
 <tr>
 <td>8</td>
-<td>R1</td>
+<td>R2</td>
 <td>220 Ω</td>
 <td>Sensor bias resistor</td>
 <td>1</td>
@@ -1005,7 +1005,7 @@ The Hub interfaces with the Audio Front-End, Light Detector Board, and Distance 
 </tr>
 <tr>
 <td>9</td>
-<td>R2, R5</td>
+<td>R1</td>
 <td>10 kΩ</td>
 <td>Signal pull-down resistors</td>
 <td>2</td>
@@ -1015,7 +1015,7 @@ The Hub interfaces with the Audio Front-End, Light Detector Board, and Distance 
 </tr>
 <tr>
 <td>10</td>
-<td>R3</td>
+<td>R4</td>
 <td>1 kΩ</td>
 <td>LED current-limit</td>
 <td>1</td>
@@ -1025,9 +1025,9 @@ The Hub interfaces with the Audio Front-End, Light Detector Board, and Distance 
 </tr>
 <tr>
 <td>11</td>
-<td>R4</td>
+<td>R6, R7</td>
 <td>10 kΩ</td>
-<td>Standby pull-down (TB6612FNG)</td>
+<td>Standby pull-down (FAN8100N)</td>
 <td>1</td>
 <td>Digi-Key</td>
 <td>CF14JT10K0</td>
@@ -1035,7 +1035,7 @@ The Hub interfaces with the Audio Front-End, Light Detector Board, and Distance 
 </tr>
 <tr>
 <td>12</td>
-<td>C2, C4, C6, C7</td>
+<td>C3, C7, C8, Cnano1</td>
 <td>0.1 µF</td>
 <td>Decoupling capacitors</td>
 <td>4</td>
@@ -1045,26 +1045,36 @@ The Hub interfaces with the Audio Front-End, Light Detector Board, and Distance 
 </tr>
 <tr>
 <td>13</td>
-<td>C3</td>
-<td>33 µF Electrolytic</td>
-<td>Regulator input filter</td>
+<td>Cnano2</td>
+<td>4.7 µF</td>
+<td>Decoupling capacitors</td>
 <td>1</td>
 <td>Digi-Key</td>
-<td><a href="https://www.digikey.com/en/products/detail/panasonic-electronic-components/EEU-FR1V330/2433568">EEU-FR1V330</a></td>
-<td>Power stability</td>
+<td>CL21B104KBCNNNC</td>
+<td>Noise suppression (Provided by Peralta)</td>
 </tr>
 <tr>
 <td>14</td>
-<td>C5</td>
-<td>47 µF Electrolytic</td>
-<td>Regulator output filter</td>
+<td>C3</td>
+<td>10 µF Electrolytic</td>
+<td>Regulator input filter</td>
 <td>1</td>
 <td>Digi-Key</td>
-<td><a href="https://www.digikey.com/en/products/detail/panasonic-electronic-components/EEU-FR1H470/9921029?gclsrc=aw.ds&amp;gad_source=1&amp;gad_campaignid=17922795960&amp;gbraid=0AAAAADrbLlj2h-acRt6FR1rtV1C0-9vJ5&amp;gclid=Cj0KCQjwmYzIBhC6ARIsAHA3IkRSNUjJ9bi6Rt_rW5wY0YCjNidS_U1EfIxTJpT5dkVRykROFs4YhKUaAp1HEALw_wcB">EEU-FR1V470</a></td>
-<td>Output smoothing</td>
+<td>Provided by Peralta</td>
+<td>Power stability</td>
 </tr>
 <tr>
 <td>15</td>
+<td>C6</td>
+<td>100 µF Electrolytic</td>
+<td>Decoupling capacitors</td>
+<td>1</td>
+<td>Digi-Key</td>
+<td>Provided by Peralta</td>
+<td>Power stability</td>
+</tr>
+<tr>
+<td>16</td>
 <td>D1</td>
 <td>LED (Red 3 mm)</td>
 <td>Indicator LED</td>
@@ -1074,7 +1084,7 @@ The Hub interfaces with the Audio Front-End, Light Detector Board, and Distance 
 <td>RA2 status indicator (Provided by Peralta)</td>
 </tr>
 <tr>
-<td>16</td>
+<td>17</td>
 <td>Breadboard / Jumper Wires</td>
 <td>Prototyping accessory</td>
 <td>–</td>
@@ -1084,7 +1094,7 @@ The Hub interfaces with the Audio Front-End, Light Detector Board, and Distance 
 <td>For breadboard testing (Provided by Peralta)</td>
 </tr>
 <tr>
-<td>17</td>
+<td>18</td>
 <td>USB Cable (Micro-B)</td>
 <td>Programming &amp; Power</td>
 <td>–</td>
@@ -1094,8 +1104,8 @@ The Hub interfaces with the Audio Front-End, Light Detector Board, and Distance 
 <td>For Curiosity Nano</td>
 </tr>
 <tr>
-<td>18</td>
-<td>J2, J3, J5</td>
+<td>19</td>
+<td>J2, J3, J9</td>
 <td>8-Pin IDC Ribbon Cable</td>
 <td>Standard 8-conductor ribbon cable with connectors attached (2×4 pin)</td>
 <td>3</td>
@@ -1109,7 +1119,7 @@ The Hub interfaces with the Audio Front-End, Light Detector Board, and Distance 
 <h2 id="system-notes">System Notes</h2>
 <ul>
 <li>Power Input: 9 V DC via barrel jack → LM7805 → +5 V rail.  </li>
-<li>Logic Level: 3.3 V I/O (compatible with Curiosity Nano).  </li>
+<li>Logic Level: 5 V I/O (compatible with Curiosity Nano).  </li>
 <li>Inter-Board Connection: 8-pin ribbon standard (+5 V, GND, signals).  </li>
 <li>Safety: 1 A fuse + decoupling capacitors at each subsystem.  </li>
 </ul>
