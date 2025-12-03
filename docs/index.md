@@ -11,8 +11,19 @@ as part of<br>
 for<br>
 <font size= "5"> Team 204 </font><br>
 
-**Submission: December 1, 2025**
+**Submission: December 9, 2025**
+
+### ClapSense Prototype 
+![ClapSense-Prototype](ClapSense-Prototype.jpg)
+
+
 </center>
+
+
+
+
+
+
 
 ## Introduction
 
