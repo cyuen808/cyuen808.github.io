@@ -22,9 +22,6 @@ for<br>
 
 
 
-
-
-
 ## Introduction
 
 This datasheet explains the design and setup of my subsystem, the Master Controller (Hub), for Team 204’s ClapSense Smart Light. It shows how my board interfaces with the Audio Front-End, Light Sensor Board, and Sensor Front-End, and how it controls the actuator system using a FAN8100N H-Bridge to toggle the lamp when a valid clap is detected.  
