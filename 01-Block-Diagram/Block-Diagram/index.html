@@ -1013,13 +1013,13 @@
 <p><strong>Team 204 – Clap-Activated Smart Light</strong><br>
 <strong>Caleb Yuen – Master Controller (Hub)</strong>  </p>
 <h2 id="overview">Overview</h2>
-<p>This page describes the hardware layout of my subsystem (Hub) for the team clap-activated light project. The Master Controller (PIC18F57Q43 Curiosity Nano) processes sensor data from the Audio, Filter, and Sensor Front-End boards, then drives the actuator to control the lamp output. The design uses an 8-pin ribbon-cable standard for consistent power and signal connections across all subsystems.</p>
+<p>This page describes the hardware layout of my subsystem (Hub) for the team clap-activated light project. The Master Controller (PIC18F57Q43 Curiosity Nano) processes sensor data from the Audio, Light Sensor, and Sensor Front-End boards, then drives the actuator to control the LED output. The design uses an 8-pin ribbon-cable standard for consistent power and signal connections across all subsystems.</p>
 <h2 id="block-diagram">Block Diagram</h2>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../egr304-team204-block-diagram-hub.png" data-desc-position="bottom"><img alt="Caleb Yuen: Master Controller (Hub) " src="../egr304-team204-block-diagram-hub.png"></a></p>
 <p><strong>Microcontroller:</strong> Microchip PIC18F57Q43 Curiosity Nano  </p>
 <h3 id="power-path">Power Path</h3>
-<p>9 V DC input → LM7805 Regulator → 5 V system rail (+5_SYS)<br>
-All logic runs at 3.3 V internally on the PIC.</p>
+<p>9 V DC input → LM7805 Regulator → 5 V system rail 
+All logic runs at 5 V internally on the PIC.</p>
 <h3 id="inputs">Inputs</h3>
 <table>
 <thead>
@@ -1033,11 +1033,11 @@ All logic runs at 3.3 V internally on the PIC.</p>
 </thead>
 <tbody>
 <tr>
-<td>Light Detector Board</td>
+<td>Light Sensor Board</td>
 <td>RA1_LightOutput</td>
 <td>RA1</td>
 <td>Digital In</td>
-<td>Reads filtered light threshold signal</td>
+<td>Senses outside light to automatically shut off system</td>
 </tr>
 <tr>
 <td>Audio Board</td>
@@ -1047,18 +1047,11 @@ All logic runs at 3.3 V internally on the PIC.</p>
 <td>Detects clap events from Audio Front-End</td>
 </tr>
 <tr>
-<td>Audio Board</td>
-<td>RA5_Analog/A-D</td>
-<td>RA5</td>
-<td>Analog In</td>
-<td>Auxiliary analog line for testing or filter signal</td>
-</tr>
-<tr>
-<td>Distance Front-End</td>
+<td>Sensor Front-End</td>
 <td>RA3_DIST_ADC</td>
 <td>RA3</td>
 <td>Analog In</td>
-<td>Reads distance sensor feedback</td>
+<td>Measures ambient light levels for adaptive brightness</td>
 </tr>
 </tbody>
 </table>
@@ -1074,13 +1067,6 @@ All logic runs at 3.3 V internally on the PIC.</p>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>Light Detector Board</td>
-<td>RB2_STATUS_LED</td>
-<td>RB2</td>
-<td>Digital Out</td>
-<td>LED feedback to Filter Board</td>
-</tr>
 <tr>
 <td>(H-Bridge)</td>
 <td>RB0_PWM_A / RB1_PWM_B</td>
