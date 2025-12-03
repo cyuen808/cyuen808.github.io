@@ -3,8 +3,7 @@ title: PCB Design
 ---
 
 ## Overview
-
----
+This page documents the full PCB design process for the ClapSense Hub board. It includes the final routed layout in KiCad, the manufactured PCB from JLCPCB, and the fully assembled version with the PIC18F57Q43 Curiosity Nano and supporting components installed. The board connects to the Audio, Light Sensor, and Sensor Front-End subsystems through standardized headers and uses an onboard H-bridge to drive the system’s motor output. The images below show the evolution from digital layout to physical implementation, highlighting the final wiring, routing strategy, and connector placements used in the project.
 
 
 
@@ -27,7 +26,5 @@ title: PCB Design
 
 
 
-
-### Notes  
 
 
