@@ -679,6 +679,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#breadboard-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Breadboard Design
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#downloads" class="md-nav__link">
     <span class="md-ellipsis">
       Downloads
@@ -901,6 +910,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#breadboard-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Breadboard Design
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#downloads" class="md-nav__link">
     <span class="md-ellipsis">
       Downloads
@@ -950,21 +968,28 @@
 
 <h2 id="overview">Overview</h2>
 <p>This schematic shows the PIC18F57Q43 Curiosity Nano as the central controller for the ClapSense Hub.<br>
-It interfaces with three external subsystems — the Audio Front-End, Light Detector Board, and Distance Front-End — using standardized 8-pin ribbon connectors.  </p>
-<p>The design includes a 9 V → 5 V LM7805 voltage regulator with fuse protection, a FAN8100N H-Bridge motor driver for the actuator, and a 3.3 V logic interface between all boards.<br>
+It interfaces with three external subsystems — the Audio Front-End, Light Sensor Board, and Sensor Front-End — using standardized 8-pin ribbon connectors.  </p>
+<p>The design includes a 9 V → 5 V LM7805 voltage regulator with fuse protection, a FAN8100N H-Bridge motor driver for the actuator, and a 5 V logic interface between all boards.<br>
 All power and signal connections align with the team block diagram and system-level design.</p>
 <h3 id="schematic-preview">Schematic Preview</h3>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../C_Yuen_Hub_Schematic.png" data-desc-position="bottom"><img alt="C_Yuen_Hub_Schematic" src="../C_Yuen_Hub_Schematic.png"></a></p>
+<h3 id="breadboard-design">Breadboard Design</h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../C_Yuen_BreadBoard.jpg" data-desc-position="bottom"><img alt="C_Yuen_BreadBoard" src="../C_Yuen_BreadBoard.jpg"></a></p>
+<ul>
+<li>HUB RA2 connects to Light Sensor Board</li>
+<li>HUB RA0 connects to Audio Board</li>
+<li>HUB RA3 connects to Sensor Front-End</li>
+</ul>
 <h3 id="downloads">Downloads</h3>
 <ul>
 <li><a href="../C_Yuen_Hub_Schematic.pdf">View full PDF schematic</a>  </li>
 </ul>
 <h3 id="notes">Notes</h3>
 <ul>
-<li><strong>Logic Voltage:</strong> 3.3 V (from PIC18F57Q43 VTG pin)  </li>
+<li><strong>Logic Voltage:</strong> 5 V (from PIC18F57Q43 VTG pin)  </li>
 <li><strong>Motor Driver Supply:</strong> 5 V regulated from LM7805  </li>
-<li><strong>Input Power:</strong> 9 V DC via barrel jack → Fuse → LM7805 → +5V_SYS rail  </li>
-<li><strong>Outputs:</strong> +5V_SYS shared with all subsystems through 8-pin connectors  </li>
+<li><strong>Input Power:</strong> 9 V DC via barrel jack → Fuse → LM7805 → +5V rail  </li>
+<li><strong>Outputs:</strong> +5V  shared with all subsystems through 8-pin connectors  </li>
 <li><strong>Motor Driver:</strong> FAN8100N handles bidirectional drive, braking, and back-EMF protection internally  </li>
 <li><strong>Grounds:</strong> All GND nets are shared across every subsystem for common reference  </li>
 </ul>
