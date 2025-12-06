@@ -7,7 +7,7 @@ This program implements a reliable single-button control system for driving a mo
 
 
 ### Downloads  
-- [Download KiCad project ZIP](C.Yuen.PrototypeTest.v2.zip)
+- [Download Subsystem Hardware Functionality project ZIP](C.Yuen.PrototypeTest.v2.zip)
 
 
 
