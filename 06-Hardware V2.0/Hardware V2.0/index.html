@@ -794,7 +794,7 @@
         <li class="md-nav__item">
   <a href="#hub-subsystem-version-20-discussion" class="md-nav__link">
     <span class="md-ellipsis">
-      ** Hub Subsystem Version 2.0 Discussion **
+      Hub Subsystem Version 2.0 Discussion
     </span>
   </a>
   
@@ -983,7 +983,7 @@
         <li class="md-nav__item">
   <a href="#hub-subsystem-version-20-discussion" class="md-nav__link">
     <span class="md-ellipsis">
-      ** Hub Subsystem Version 2.0 Discussion **
+      Hub Subsystem Version 2.0 Discussion
     </span>
   </a>
   
@@ -1014,7 +1014,7 @@
 
   <h1>Hardware V2.0</h1>
 
-<h2 id="hub-subsystem-version-20-discussion">** Hub Subsystem Version 2.0 Discussion **</h2>
+<h2 id="hub-subsystem-version-20-discussion">Hub Subsystem Version 2.0 Discussion</h2>
 <p>If I were to make a Version 2.0 of my Hub hardware design, there are several things I would improve now that I have gone through the full process of building, testing, and troubleshooting the first version. The current schematic does everything it needs to for this project. It brings in power through the barrel jack and fuse, drops it to five volts using the LM7805 regulator, drives the motor with the FAN8100N H bridge, and communicates with the Audio, Filter, and Distance boards. Now that the board actually exists in physical form, it is much easier to see which parts of the design could be stronger or more reliable.</p>
 <p>The first improvement I would focus on is the power stage. Right now the Hub uses a linear regulator to drop nine volts down to five, and with the motor and the microcontroller both running off that same rail, the regulator ends up burning off a noticeable amount of heat. In the schematic you can see this entire path flowing through J1, the fuse, and into U1 before the five volt rail branches out to the rest of the board. A switching regulator would be a much better fit in a second version because it would waste far less energy and keep the whole board cooler, especially during long test sessions where the motor is running often.</p>
 <p>Another thing I would update is the motor driver. The FAN8100N works, but it is an older part and not very easy to replace or find documentation for. The schematic shows it tied to the PIC outputs on RB0 and RB1 and routed directly to the motor connector, so swapping it for a newer driver would be simple. Something like a TB6612FNG or a DRV8833 would make the design more future proof and easier for someone else to reproduce later since those drivers are still commonly used and supported.</p>
