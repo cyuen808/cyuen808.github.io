@@ -96,7 +96,7 @@ title: Component Selection
 **Rationale:** The DFRobot 6 V metal gearmotor was chosen for its high torque and low-speed output, providing smooth, controlled motion for pressing a button without bounce or damage. It operates safely on the project’s ≤ 9 V supply, draws under 1 A, and pairs perfectly with the FAN8100N H-Bridge, ensuring simple, reliable actuation with built-in protection and 3.3 V logic compatibility.
 
 
-**Final Major Components for Hub Subsystem**
+## **Final Major Components for Hub Subsystem**
 
 ## Final Selection
 | Component | Pros | Cons |
@@ -107,7 +107,7 @@ title: Component Selection
 | <img src="https://media.microchip.com/assets/f/4/4/f/0a1b65e51601c7088872dbe98b17.l.png" width="120"> <br> **PIC18F57Q43 Curiosity Nano (DM182029)** <br> *$9.99 each* <br> [Link to product](https://www.microchip.com/en-us/development-tool/DM164150) | • Powerful 5 V microcontroller with ADC, PWM, and UART  <br> • Easy USB programming and debugging  <br> • Breadboard-friendly footprint | • On-board 3.3 V regulator has limited current  <br> • Requires MCC setup for peripheral configuration |
 
 
-**MCC Pinout Table for Hub Subsystem**
+## **MCC Pinout Table for Hub Subsystem**
 
 | Microcontroller Pin | MCC Label / Function | Subsystem Connection | Description |
 |---------------------|----------------------|-----------------------|-------------|
