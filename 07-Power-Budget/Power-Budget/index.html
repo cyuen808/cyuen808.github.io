@@ -824,21 +824,27 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusions" class="md-nav__link">
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#power-budget" class="md-nav__link">
     <span class="md-ellipsis">
-      Conclusions
+      Power Budget
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#resources" class="md-nav__link">
+  <a href="#downloads" class="md-nav__link">
     <span class="md-ellipsis">
-      Resources
+      Downloads
     </span>
   </a>
   
@@ -939,21 +945,27 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusions" class="md-nav__link">
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#power-budget" class="md-nav__link">
     <span class="md-ellipsis">
-      Conclusions
+      Power Budget
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#resources" class="md-nav__link">
+  <a href="#downloads" class="md-nav__link">
     <span class="md-ellipsis">
-      Resources
+      Downloads
     </span>
   </a>
   
@@ -985,15 +997,10 @@
   <h1>Power Budget</h1>
 
 <h2 id="overview">Overview</h2>
-<p>This section will include power consumption estimates for each subsystem once the design is finalized.<br>
-For now, this page serves as a placeholder with the Power Budget spreadsheet available for reference.  </p>
-<p>The power budget will later calculate:<br>
-- Current draw for each component (microcontroller, H-bridge, motor, etc.)<br>
-- Power rail groupings (5 V logic and 6–9 V motor)<br>
-- Supply margins and thermal headroom  </p>
-<h2 id="conclusions">Conclusions</h2>
-<p>This page will be updated after testing and measurement data are collected during the External Design Review.  </p>
-<h2 id="resources">Resources</h2>
+<p>This power budget summarizes the electrical needs of the ClapSense Hub based on the final hardware and spreadsheet results. The hub uses a 9 volt, 2 amp wall adapter that supplies an LM7805 linear regulator, which provides a stable 5 volt rail for the whole system. Every major part of the board, including the PIC18F57Q43 Curiosity Nano, the FAN8100N motor driver, the 6 volt gearmotor running at 5 volts, and the status LEDs, draws power from this regulator. When looking at the worst case numbers, the system uses around 655 milliamps. Adding a safety margin brings the expected requirement to about 820 milliamps. This is comfortably within the limits of both the LM7805 and the wall adapter, which means the board has plenty of room for startup surges, motor load changes, heat, and extra peripherals during testing. Overall, the final power analysis shows that the hub operates well within safe limits and has enough headroom for reliable performance.</p>
+<h3 id="power-budget">Power Budget</h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../EGR304-Team204-PowerBudget.png" data-desc-position="bottom"><img alt="Power Budget" src="../EGR304-Team204-PowerBudget.png"></a></p>
+<h2 id="downloads">Downloads</h2>
 <p>The Power Budget template can be downloaded below:  </p>
 <ul>
 <li><a href="../EGR304-Team204-PowerBudget.xlsx">Power Budget (.xlsx)</a>  </li>
