@@ -621,6 +621,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#connecting-the-block-diagram-to-system-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      ** Connecting the Block Diagram to System Requirements **
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1091,6 +1100,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#connecting-the-block-diagram-to-system-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      ** Connecting the Block Diagram to System Requirements **
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1192,6 +1210,8 @@ All logic runs at 5 V internally on the PIC.</p>
 <h3 id="actuator-path">Actuator Path</h3>
 <p>FAN8100N H-Bridge receives PWM inputs from RB0 &amp; RB1 and drives the DFRobot FIT0441 6 V motor.<br>
 Power pins PVC CA/B are fed by +5V and controlled through the PIC enable pin RA5.</p>
+<h2 id="connecting-the-block-diagram-to-system-requirements">** Connecting the Block Diagram to System Requirements **</h2>
+<p>Each block in the Hub diagram directly supports the team’s product requirements by turning sensor inputs into reliable, safe, and predictable system behavior. The PIC18F57Q43 processes clap, light, and distance signals in real time, which helps the system meet its accuracy and fast response requirements. The LM7805 power regulator keeps the entire design at a safe five volts, supporting the requirement for low-voltage operation and stable sensor readings. The clap input from the Audio Board drives the core function of detecting a valid user command, the light sensor input prevents the system from activating in bright environments, and the distance input enables adaptive brightness, all of which connect to the project’s usability and customization goals. On the output side, the PWM signals that feed the FAN8100N H-bridge allow the Hub to meet timing and durability requirements by controlling the motor smoothly and only when needed. The onboard status LED provides clear user feedback, supporting the requirement for simple interaction. Together, these elements show how the Hub fulfills the team’s expectations for safety, performance, and an intuitive user experience.</p>
 
 
 
