@@ -38,10 +38,5 @@ All logic runs at 5 V internally on the PIC.
 
 ### Actuator Path
 FAN8100N H-Bridge receives PWM inputs from RB0 & RB1 and drives the DFRobot FIT0441 6 V motor.  
-Power pins PVC CA/B are fed by +5_SYS and controlled through the PIC enable pin RA5.
+Power pins PVC CA/B are fed by +5V and controlled through the PIC enable pin RA5.
 
----
-
-## Notes
-- Inter-board ribbon connectors use shared GND and +5_SYS.  
-- Voltage dividers (10 kΩ / 20 kΩ) are used on incoming 5 V signals to protect 3.3 V PIC inputs.  
