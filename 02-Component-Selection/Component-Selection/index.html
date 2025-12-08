@@ -614,6 +614,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#table-1-final-major-components-for-hub-subsystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table 1: Final Major Components for Hub Subsystem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Table 1: Final Major Components for Hub Subsystem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#final-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Selection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -959,6 +983,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#table-1-final-major-components-for-hub-subsystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table 1: Final Major Components for Hub Subsystem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Table 1: Final Major Components for Hub Subsystem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#final-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Selection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -981,8 +1029,6 @@
   
   
 
-
-  <h1>Component Selection</h1>
 
 <h2 id="master-controller-hub">Master Controller (HUB)</h2>
 <h2 id="h-bridge-motor-driver-options"><strong>H-Bridge Motor Driver Options</strong></h2>
@@ -1175,6 +1221,39 @@
 </ol>
 <p><strong>Choice:</strong> Option 1: DFRobot 6 V Metal Gearmotor (FIT0495-A)</p>
 <p><strong>Rationale:</strong> The DFRobot 6 V metal gearmotor was chosen for its high torque and low-speed output, providing smooth, controlled motion for pressing a button without bounce or damage. It operates safely on the project’s ≤ 9 V supply, draws under 1 A, and pairs perfectly with the FAN8100N H-Bridge, ensuring simple, reliable actuation with built-in protection and 3.3 V logic compatibility.</p>
+<h1 id="table-1-final-major-components-for-hub-subsystem">Table 1: Final Major Components for Hub Subsystem</h1>
+<h2 id="final-selection">Final Selection</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://cyuen808.github.io/02-Component-Selection/Screenshot%202025-10-16%20162800.png" data-desc-position="bottom"><img src="https://cyuen808.github.io/02-Component-Selection/Screenshot%202025-10-16%20162800.png" width="120"></a>  <br> <strong>Motor Driver – FAN8100N</strong>  <br> <em>$0 (on-hand)</em>  <br> <a href="https://www.digikey.com/en/products/detail/fairchild-semiconductor/FAN8100N/11558200">Link to product</a></td>
+<td>• Works with 5 V logic signals from the PIC microcontroller  <br> • Provides forward, reverse, and brake control  <br> • Built-in thermal shutdown and short-circuit protection  <br> • Can drive up to ~1.5 A per channel</td>
+<td>• Older component, harder to source now  <br> • Less documentation compared to newer H-bridges</td>
+</tr>
+<tr>
+<td><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://cyuen808.github.io/02-Component-Selection/Screenshot%202025-10-16%20165017.png" data-desc-position="bottom"><img src="https://cyuen808.github.io/02-Component-Selection/Screenshot%202025-10-16%20165017.png" width="120"></a> <br> <strong>DC Gearmotor – FIT0495-A</strong> <br> <em>$9.90 each</em> <br> <a href="https://www.digikey.com/en/products/detail/dfrobot/FIT0495-A/7087178">Link to product</a></td>
+<td>• Low stall current (~0.6 A), safe for FAN8100N  <br> • High torque at low speed for controlled actuation  <br> • Operates well from 5–7.5 V  <br> • Durable metal gearbox</td>
+<td>• Slow speed (≈15 RPM)  <br> • Gearbox backlash introduces small mechanical play</td>
+</tr>
+<tr>
+<td><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/2660/497%7ETO220-3TO220AB%7E%7E3.JPG?hidebanner=true" data-desc-position="bottom"><img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/2660/497%7ETO220-3TO220AB%7E%7E3.JPG?hidebanner=true" width="120"></a> <br> <strong>Voltage Regulator – LM7805 TO-220</strong> <br> <em>$0.79 each</em> <br> <a href="https://www.digikey.com/en/products/detail/stmicroelectronics/L7805CV/585964">Link to product</a></td>
+<td>• Provides stable 5 V for entire Hub subsystem  <br> • Simple and reliable linear regulation  <br> • Supports up to 1 A output</td>
+<td>• Generates heat when dropping from 9 V  <br> • Lower efficiency than switching regulators</td>
+</tr>
+<tr>
+<td><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://media.microchip.com/assets/f/4/4/f/0a1b65e51601c7088872dbe98b17.l.png" data-desc-position="bottom"><img src="https://media.microchip.com/assets/f/4/4/f/0a1b65e51601c7088872dbe98b17.l.png" width="120"></a> <br> <strong>PIC18F57Q43 Curiosity Nano (DM182029)</strong> <br> <em>$16.50 each</em> <br> <a href="https://www.microchip.com/en-us/development-tool/DM164150">Link to product</a></td>
+<td>• Powerful 5 V microcontroller with ADC, PWM, and UART  <br> • Easy USB programming and debugging  <br> • Breadboard-friendly footprint</td>
+<td>• On-board 3.3 V regulator has limited current  <br> • Requires MCC setup for peripheral configuration</td>
+</tr>
+</tbody>
+</table>
 
 
 
