@@ -2,7 +2,7 @@
 title: Resources
 ---
 
-## ** Microcontroller Code ** 
+##  Microcontroller Code  
 
 
 ## Team Code

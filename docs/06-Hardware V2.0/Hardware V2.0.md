@@ -2,7 +2,7 @@
 title: Hardware V2.0
 ---
 
-## ** Hub Subsystem Version 2.0 Discussion **
+## Hub Subsystem Version 2.0 Discussion 
 
 If I were to make a Version 2.0 of my Hub hardware design, there are several things I would improve now that I have gone through the full process of building, testing, and troubleshooting the first version. The current schematic does everything it needs to for this project. It brings in power through the barrel jack and fuse, drops it to five volts using the LM7805 regulator, drives the motor with the FAN8100N H bridge, and communicates with the Audio, Filter, and Distance boards. Now that the board actually exists in physical form, it is much easier to see which parts of the design could be stronger or more reliable.
 
