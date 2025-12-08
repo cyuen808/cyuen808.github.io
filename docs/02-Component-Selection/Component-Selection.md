@@ -105,3 +105,18 @@ title: Component Selection
 | <img src="https://cyuen808.github.io/02-Component-Selection/Screenshot%202025-10-16%20165017.png" width="120"> <br> **DC Gearmotor – FIT0495-A** <br> *$9.90 each* <br> [Link to product](https://www.digikey.com/en/products/detail/dfrobot/FIT0495-A/7087178) | • Low stall current (~0.6 A), safe for FAN8100N  <br> • High torque at low speed for controlled actuation  <br> • Operates well from 5–7.5 V  <br> • Durable metal gearbox | • Slow speed (≈15 RPM)  <br> • Gearbox backlash introduces small mechanical play |
 | <img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/2660/497%7ETO220-3TO220AB%7E%7E3.JPG?hidebanner=true" width="120"> <br> **Voltage Regulator – LM7805 TO-220** <br> *$0.50 each* <br> [Link to product](https://www.digikey.com/en/products/detail/stmicroelectronics/L7805CV/585964) | • Provides stable 5 V for entire Hub subsystem  <br> • Simple and reliable linear regulation  <br> • Supports up to 1 A output | • Generates heat when dropping from 9 V  <br> • Lower efficiency than switching regulators |
 | <img src="https://media.microchip.com/assets/f/4/4/f/0a1b65e51601c7088872dbe98b17.l.png" width="120"> <br> **PIC18F57Q43 Curiosity Nano (DM182029)** <br> *$9.99 each* <br> [Link to product](https://www.microchip.com/en-us/development-tool/DM164150) | • Powerful 5 V microcontroller with ADC, PWM, and UART  <br> • Easy USB programming and debugging  <br> • Breadboard-friendly footprint | • On-board 3.3 V regulator has limited current  <br> • Requires MCC setup for peripheral configuration |
+
+
+**MCC Pinout Table for Hub Subsystem**
+
+| Microcontroller Pin | MCC Label / Function | Subsystem Connection | Description |
+|---------------------|----------------------|-----------------------|-------------|
+| RA0                 | RA0_Clap_Signal      | Audio Board           | Digital input carrying clap detection signal after RC filter |
+| RA1                 | RA1_LightOutput      | Light Detector Board  | Digital input indicating ambient light level (HIGH/LOW) |
+| RA2                 | HUB_LED              | External RED LED      | Status LED driven by Hub for Light |
+| RA3                 | RA3_DIST_ADC         | Distance Sensor Board | ADC input that reads analog voltage from sensor front-end |
+| RB0                 | RB0_PWM_A            | FAN8100N Motor Driver | PWM signal for Motor Channel A (controls direction/speed) |
+| RB1                 | RB1_PWM_B            | FAN8100N Motor Driver | PWM signal for Motor Channel B (controls direction/speed) |
+| VBUS (USB)          | Power Input           | Curiosity Nano USB     | Used for programming and optional USB-powered testing |
+| +5V_SYS             | System Power          | On-board Regulator     | 5 V power rail produced by LM7805, supplies entire Hub |
+| GND                 | Ground Reference      | All Subsystems         | Shared ground across Hub, Audio Board, Light Sensor Board, and Sensor Front End Board |
