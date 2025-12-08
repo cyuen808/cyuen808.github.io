@@ -95,3 +95,13 @@ title: Component Selection
 
 **Rationale:** The DFRobot 6 V metal gearmotor was chosen for its high torque and low-speed output, providing smooth, controlled motion for pressing a button without bounce or damage. It operates safely on the project’s ≤ 9 V supply, draws under 1 A, and pairs perfectly with the FAN8100N H-Bridge, ensuring simple, reliable actuation with built-in protection and 3.3 V logic compatibility.
 
+
+# Table 1: Final Major Components for Hub Subsystem
+
+## Final Selection
+| Component | Pros | Cons |
+|----------|------|------|
+| <img src="https://cyuen808.github.io/02-Component-Selection/Screenshot%202025-10-16%20162800.png" width="120">  <br> **Motor Driver – FAN8100N**  <br> *$0 (on-hand)*  <br> [Link to product](https://www.digikey.com/en/products/detail/fairchild-semiconductor/FAN8100N/11558200) | • Works with 5 V logic signals from the PIC microcontroller  <br> • Provides forward, reverse, and brake control  <br> • Built-in thermal shutdown and short-circuit protection  <br> • Can drive up to ~1.5 A per channel | • Older component, harder to source now  <br> • Less documentation compared to newer H-bridges |
+| <img src="https://cyuen808.github.io/02-Component-Selection/Screenshot%202025-10-16%20165017.png" width="120"> <br> **DC Gearmotor – FIT0495-A** <br> *$9.90 each* <br> [Link to product](https://www.digikey.com/en/products/detail/dfrobot/FIT0495-A/7087178) | • Low stall current (~0.6 A), safe for FAN8100N  <br> • High torque at low speed for controlled actuation  <br> • Operates well from 5–7.5 V  <br> • Durable metal gearbox | • Slow speed (≈15 RPM)  <br> • Gearbox backlash introduces small mechanical play |
+| <img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/2660/497%7ETO220-3TO220AB%7E%7E3.JPG?hidebanner=true" width="120"> <br> **Voltage Regulator – LM7805 TO-220** <br> *$0.79 each* <br> [Link to product](https://www.digikey.com/en/products/detail/stmicroelectronics/L7805CV/585964) | • Provides stable 5 V for entire Hub subsystem  <br> • Simple and reliable linear regulation  <br> • Supports up to 1 A output | • Generates heat when dropping from 9 V  <br> • Lower efficiency than switching regulators |
+| <img src="https://media.microchip.com/assets/f/4/4/f/0a1b65e51601c7088872dbe98b17.l.png" width="120"> <br> **PIC18F57Q43 Curiosity Nano (DM182029)** <br> *$16.50 each* <br> [Link to product](https://www.microchip.com/en-us/development-tool/DM164150) | • Powerful 5 V microcontroller with ADC, PWM, and UART  <br> • Easy USB programming and debugging  <br> • Breadboard-friendly footprint | • On-board 3.3 V regulator has limited current  <br> • Requires MCC setup for peripheral configuration |
