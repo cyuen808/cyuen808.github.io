@@ -1226,6 +1226,73 @@
 </tr>
 </tbody>
 </table>
+<p><strong>MCC Pinout Table for Hub Subsystem</strong></p>
+<table>
+<thead>
+<tr>
+<th>Microcontroller Pin</th>
+<th>MCC Label / Function</th>
+<th>Subsystem Connection</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RA0</td>
+<td>RA0_Clap_Signal</td>
+<td>Audio Board</td>
+<td>Digital input carrying clap detection signal after RC filter</td>
+</tr>
+<tr>
+<td>RA1</td>
+<td>RA1_LightOutput</td>
+<td>Light Detector Board</td>
+<td>Digital input indicating ambient light level (HIGH/LOW)</td>
+</tr>
+<tr>
+<td>RA2</td>
+<td>HUB_LED</td>
+<td>External RED LED</td>
+<td>Status LED driven by Hub for Light</td>
+</tr>
+<tr>
+<td>RA3</td>
+<td>RA3_DIST_ADC</td>
+<td>Distance Sensor Board</td>
+<td>ADC input that reads analog voltage from sensor front-end</td>
+</tr>
+<tr>
+<td>RB0</td>
+<td>RB0_PWM_A</td>
+<td>FAN8100N Motor Driver</td>
+<td>PWM signal for Motor Channel A (controls direction/speed)</td>
+</tr>
+<tr>
+<td>RB1</td>
+<td>RB1_PWM_B</td>
+<td>FAN8100N Motor Driver</td>
+<td>PWM signal for Motor Channel B (controls direction/speed)</td>
+</tr>
+<tr>
+<td>VBUS (USB)</td>
+<td>Power Input</td>
+<td>Curiosity Nano USB</td>
+<td>Used for programming and optional USB-powered testing</td>
+</tr>
+<tr>
+<td>+5V_SYS</td>
+<td>System Power</td>
+<td>On-board Regulator</td>
+<td>5 V power rail produced by LM7805, supplies entire Hub</td>
+</tr>
+<tr>
+<td>GND</td>
+<td>Ground Reference</td>
+<td>All Subsystems</td>
+<td>Shared ground across Hub, Audio Board, Light Sensor Board, and Sensor Front End Board</td>
+</tr>
+</tbody>
+</table>
 
 
 
